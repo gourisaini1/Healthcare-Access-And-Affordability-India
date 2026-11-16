@@ -65,7 +65,7 @@ Staffing coverage is rural PHC doctors in position divided by the source-reporte
 
 ![Adjusted workforce–IMR regression coefficients](Visualisations/11_adjusted_regression_staffing_coefficient.svg)
 
-The preferred model uses the natural log of the staffing ratio, with controls for log nominal per-capita NSDP and NFHS-5 female literacy. The log coefficient of −7.62 means that doubling the staffing ratio (a change of \\(\\ln 2\\)) is associated with approximately **5.3 fewer infant deaths per 1,000 live births**, holding the controls fixed. The log specification was adopted after an initial linear-ratio analysis, following a robustness review; the linear result is reported alongside it for that reason. The main result is specification-sensitive and does not establish causality.
+The preferred model uses the natural log of the staffing ratio, with controls for log nominal per-capita NSDP and NFHS-5 female literacy. The log coefficient of −7.62 means that doubling the staffing ratio (a change of \(\\ln 2\)) is associated with approximately **5.3 fewer infant deaths per 1,000 live births**, holding the controls fixed. The log specification was adopted after an initial linear-ratio analysis, following a robustness review; the linear result is reported alongside it for that reason. The main result is specification-sensitive and does not establish causality.
 
 **Seven-specification robustness table (HC3 standard errors)**
 
