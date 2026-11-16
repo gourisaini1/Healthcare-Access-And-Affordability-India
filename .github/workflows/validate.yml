@@ -48,6 +48,7 @@ jobs:
           git add Notebooks/*.ipynb Visualisations/*.svg
           if ! git diff --cached --quiet; then
             git commit -m "Save executed notebook outputs [skip ci]"
+            git pull --rebase origin main
             git push
           else
             echo "Notebook outputs are already up to date."
