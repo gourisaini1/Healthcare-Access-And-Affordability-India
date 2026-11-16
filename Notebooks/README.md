@@ -14,7 +14,8 @@ Run the notebooks from this directory in numerical order. Each notebook reads it
 | `06_Rural_Workforce_and_Health_Outcomes.ipynb` | How does rural PHC doctor staffing compare with reported requirements, and how does it relate to IMR? | Staffing coverage ratio, bivariate associations and small-denominator sensitivity |
 | `07_Adjusted_Workforce_IMR_Regression.ipynb` | Does the rural PHC staffing–IMR association persist after socioeconomic controls? | HC3-adjusted OLS, linear/log specifications, restricted-sample models, VIF and leave-one-out diagnostics |
 | `08_Government_Hospital_Beds_Per_Capita.ipynb` | How does government bed availability vary after population adjustment? | Beds per 1,000 projected population and source consistency checks |
-| `09_State_Health_Insurance_Coverage.ipynb` | How does household health insurance/financing coverage vary across states/UTs, and is it associated with per-capita NSDP? | NFHS-5 household coverage chart and descriptive Pearson/Spearman correlations |
+| `09_State_Health_Insurance_Coverage.ipynb` | How does household health insurance/financing coverage vary across states/UTs, and how does it relate to state scheme inventories and per-capita NSDP? | NFHS-5 coverage chart, descriptive correlations and scheme-group comparison |
+| `10_State_Hospitalisation_Expenditure_NSS75.ipynb` | How does average medical expenditure per hospitalisation vary by state/UT, hospital type and sector? | NSS 75th-round Table A17 summary and state comparison chart; gross expenditure, not net OOPE |
 
 ## Notebook 07: model specification and sample
 
@@ -55,4 +56,4 @@ cd Notebooks
 jupyter lab
 ```
 
-Open the notebooks in numerical order and run all cells. The automated GitHub Actions workflow performs dataset and notebook-syntax checks, executes all nine notebooks, and saves executed outputs and generated SVG figures to the main branch on successful pushes.
+Open the notebooks in numerical order and run all cells. The automated GitHub Actions workflow performs dataset and notebook-syntax checks, executes all ten notebooks, and saves executed outputs and generated SVG figures to the main branch on successful pushes.
