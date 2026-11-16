@@ -273,7 +273,19 @@ The notebook joins 2023 IMR to 2024–25 Revised Estimates of health expenditure
 
 **Sources:** RBI, [Handbook of Statistics on Indian States 2024–25, Table 4](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23453); RBI, [State Finances: A Study of Budgets of 2025–26, Statement 27](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23736).
 
-## 13. Tools and Technologies
+## 13. State-wise government hospital infrastructure
+
+The RBI *Handbook of Statistics on Indian States 2024–25*, Table 17, reproduces state/UT counts of government hospitals and beds from the National Health Profile. The RBI table does not state a distinct observation year for these counts. The edition year must not be mistaken for the data reference year.
+
+![Government hospital beds by state and UT](Visualisations/07_state_government_hospital_beds.svg)
+
+The chart presents absolute bed counts, not beds per capita. Larger states will generally have larger totals, so the chart should not be read as a ranking of access or adequacy. The dataset also includes rural/urban splits where reported.
+
+Files: [hospital and beds dataset](Dataset/state_government_hospitals_and_beds_rbi_handbook_2024_25.csv), [data dictionary](Dataset/HOSPITALS_BEDS_DATA_DICTIONARY.md), [analysis notebook](Notebooks/04_State_Hospital_Infrastructure_Analysis.ipynb).
+
+**Source:** RBI, [Handbook of Statistics on Indian States 2024–25, Table 17](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23466). The source notes that government hospitals include central, state and local government bodies, and that Delhi and Chandigarh have no rural area.
+
+## 14. Tools and Technologies
 
 | Technology | Application |
 |---|---|
@@ -286,7 +298,7 @@ The notebook joins 2023 IMR to 2024–25 Revised Estimates of health expenditure
 | Jupyter Notebook | Interactive analysis and documentation |
 | GitHub | Project documentation and version control |
 
-## 14. Expected Research Contributions
+## 15. Expected Research Contributions
 
 The project aims to provide:
 
@@ -296,7 +308,7 @@ The project aims to provide:
 - An understanding of socioeconomic barriers to healthcare affordability.
 - Evidence-based recommendations for strengthening healthcare access and financial protection.
 
-## 15. Limitations of the Study
+## 16. Limitations of the Study
 
 The study acknowledges the following limitations:
 
@@ -307,7 +319,7 @@ The study acknowledges the following limitations:
 - Correlation between healthcare expenditure and health outcomes does not establish causation.
 - The study relies on secondary data and is subject to the limitations of the original data sources.
 
-## 16. Repository Structure
+## 17. Repository Structure
 
 ```text
 Healthcare-Access-and-Affordability-India/
@@ -331,7 +343,7 @@ Healthcare-Access-and-Affordability-India/
 └── requirements.txt
 ```
 
-## 17. References
+## 18. References
 
 1. Ministry of Health and Family Welfare, Government of India. National Health Accounts Estimates for India 2021-22.
 2. Ministry of Health and Family Welfare, Government of India. Rural Health Statistics 2021-22.
@@ -339,7 +351,7 @@ Healthcare-Access-and-Affordability-India/
 4. World Bank. World Development Indicators.
 5. National Health Systems Resource Centre (NHSRC). National Health Accounts.
 
-## 18. Author
+## 19. Author
 
 **Gouri Saini**
 
