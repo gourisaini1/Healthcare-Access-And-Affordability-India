@@ -13,6 +13,7 @@ This directory contains the source-derived CSV files used by the eight analysis 
 | `state_infant_mortality_rate_2023.csv` | State/UT, calendar 2023 | Infant mortality per 1,000 live births | [IMR dictionary](IMR_DATA_DICTIONARY.md) |
 | `state_rural_phc_doctors_2023.csv` | 36 state/UT rows, calendar 2023 | Rural PHC doctors in position and reported requirement | [PHC doctors dictionary](PHC_DOCTORS_DATA_DICTIONARY.md) |
 | `state_socioeconomic_covariates_nfhs5_rbi.csv` | State/UT; female literacy NFHS-5 2019–21; per-capita NSDP FY2021–22 | Socioeconomic controls for Notebook 07 | [Socioeconomic covariates dictionary](SOCIOECONOMIC_COVARIATES_DATA_DICTIONARY.md) |
+| `state_health_insurance_coverage_nfhs5.csv` | 36 states/UTs, NFHS-5 2019–21 | Household reach of any health insurance/financing scheme; financial-protection proxy | [Insurance coverage dictionary](HEALTH_INSURANCE_COVERAGE_DATA_DICTIONARY.md) |
 | `state_government_hospitals_and_beds_rbi_handbook_2024_25.csv` | State/UT; source table does not specify a distinct observation year | Earlier government hospital and bed-count comparison | [Hospitals and beds dictionary](HOSPITALS_BEDS_DATA_DICTIONARY.md) |
 | `state_government_hospital_beds_nhp2023_per_1000.csv` | 36 states/UTs; beds 31 Dec 2022; projected population 1 Mar 2021 | Government hospital beds per 1,000 projected population | [NHP beds dictionary](HOSPITAL_BEDS_NHP2023_DATA_DICTIONARY.md) |
 | `state_health_spending_imr_matched_exploratory.csv` | 31 matched states/UTs | Derived state budget-share / IMR comparison used in exploratory analysis | See source dictionaries for component definitions |
@@ -23,6 +24,7 @@ This directory contains the source-derived CSV files used by the eight analysis 
 - **State budgets and outcomes:** Notebooks 02, 03 and 05 compare state budget composition and infant mortality. The budget share is not per-capita spending or health-system quality.
 - **Hospital infrastructure:** Notebook 04 analyses the earlier RBI hospital/bed table. Notebook 08 uses the dated NHP-2023 bed count and projected population to calculate beds per 1,000.
 - **Rural PHC workforce:** Notebook 06 calculates doctors in position divided by the source-reported requirement. Notebook 07 combines that ratio with 2023 IMR and two socioeconomic controls.
+- **Household insurance coverage:** Notebook 09 analyses the NFHS-5 percentage of households with at least one usual member covered by any health insurance or financing scheme. This is a coverage proxy, not a direct measure of out-of-pocket burden or benefit adequacy.
 - **Derived matched data:** `state_health_spending_imr_matched_exploratory.csv` is a prepared analytical join, not an independent primary source.
 
 ## Data handling rules
