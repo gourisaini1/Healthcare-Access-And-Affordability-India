@@ -77,10 +77,12 @@ socio_analysis["log_nsdp"] = __import__("numpy").log(
 adjusted_sample = socio_analysis.dropna(
     subset=["female_literacy_nfhs5_pct", "log_nsdp"]
 )
-assert not workforce.empty, "No matched workforce–IMR observations; check state keys and source coverage"
-assert not adjusted_sample.empty, "No complete cases remain for the adjusted model"
+# Guard against broken joins or unexpected sample loss, not merely empty outputs.
+assert 30 <= len(workforce) <= 36, len(workforce)
+assert 28 <= len(adjusted_sample) <= 34, len(adjusted_sample)
+assert -0.70 < r_staff < -0.35, r_staff
+assert -0.70 < rho_staff < -0.35, rho_staff
 assert adjusted_sample[["female_literacy_nfhs5_pct", "log_nsdp"]].notna().all().all()
-assert pd.Series([r_staff, rho_staff]).map(lambda x: pd.notna(x) and abs(x) <= 1).all()
 
 notebooks = sorted(NOTEBOOKS.glob("*.ipynb"))
 assert len(notebooks) == 8, [p.name for p in notebooks]
