@@ -57,6 +57,10 @@ Official source links:
 - [RBI Handbook 2023–24, Table 26: Per-capita NSDP](https://nhm.tn.gov.in/wp-content/uploads/2026/Key_Statistics/RBI/RBI%20Statistics%20Handbook%202023-24.pdf)
 - [NFHS-5 India Report, Table 3.4.1](https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf)
 - [National Health Profile 2023, CBHI](https://cbhidghs.mohfw.gov.in/sites/default/files/NHP/NHP-2023-Last-Final.pdf)
+- [NSS 75th Round, Key Indicators of Social Consumption in India: Health, Table A17](https://www.thehinducentre.com/resources/68921711-2019_75th-Round-NSSO_Final-Social-Consumption-of-Health.pdf)
+- [NSS 75th Round microdata catalogue (login required for unit-level data)](https://microdata.gov.in/nada/index.php/catalog/152)
+- [State health insurance scheme inventory review (2023)](https://www.mdpi.com/2227-9032/11/9/1343)
+- [NFHS-5 A&N Phase-I state fact sheet](https://nhm.gov.in/uhc-day/Session%202/NFHS-5%20State%20Factsheet%20Compendium_Phase-I%20%281%29.pdf)
 
 ## 3. Methodology
 
