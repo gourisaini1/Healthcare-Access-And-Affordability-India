@@ -87,6 +87,16 @@ assert 28 <= len(adjusted_sample) <= 34, len(adjusted_sample)
 assert -0.70 < r_staff < -0.35, r_staff
 assert -0.70 < rho_staff < -0.35, rho_staff
 assert adjusted_sample[["female_literacy_nfhs5_pct", "log_nsdp"]].notna().all().all()
+insurance_analysis = insurance.merge(
+    socio[["state_ut", "per_capita_nsdp_2021_22_inr"]],
+    on="state_ut", how="left", validate="one_to_one"
+).dropna(subset=["per_capita_nsdp_2021_22_inr"])
+r_insurance_nsdp, p_insurance_nsdp = pearsonr(
+    insurance_analysis.per_capita_nsdp_2021_22_inr,
+    insurance_analysis.households_any_member_covered_pct,
+)
+assert len(insurance_analysis) == 33, len(insurance_analysis)
+assert 0.04 < r_insurance_nsdp < 0.07, r_insurance_nsdp
 
 notebooks = sorted(NOTEBOOKS.glob("*.ipynb"))
 assert len(notebooks) == 9, [p.name for p in notebooks]
