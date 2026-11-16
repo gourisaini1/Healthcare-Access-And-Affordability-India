@@ -40,7 +40,10 @@ The following questions are recognised as important but are **not answered by th
 | State public health expenditure share | FY2023–24 and FY2024–25 RE | RBI, State Finances 2025–26, Statement 27 | Budget composition |
 | Infant mortality rate | Calendar 2023 | SRS, reproduced in RBI Handbook 2024–25, Table 4 | State health outcome |
 | Rural PHC doctor staffing | Calendar 2023 | RBI Handbook 2024–25, Table 16 | Staffing relative to reported requirement |
-| Government hospitals and beds | Observation year not specified in RBI table | RBI Handbook 2024–25, Table 17 | Infrastructure description |
+| Per-capita NSDP | FY2021–22, current prices | RBI Handbook 2023–24, Table 26 | Income control |
+| Female literacy | NFHS-5, 2019–21, women aged 15–49 | IIPS / MoHFW, NFHS-5 India Report, Table 3.4.1 | Education control |
+| Government hospital beds | 31 December 2022 | CBHI, National Health Profile 2023, Table 6.2.2 | Beds numerator |
+| Projected population | 1 March 2021 | CBHI, National Health Profile 2023, Table 1.1.2(d) | Population denominator for beds per 1,000 |
 
 Official source links:
 - [NHSRC National Health Accounts](https://nhsrcindia.org/national-health-accounts-records)
