@@ -1,47 +1,60 @@
-# Project status — Version 2 baseline validated
+# Project status — Version 3 exploratory extension
 
-**Status:** Baseline reproducibility checks and execution passed; two requested extensions remain open.  
+**Status:** New socioeconomic regression and population-adjusted beds analyses added; final CI execution pending.  
 **Evidence cut-off:** 16 November 2026.
 
-## Completed and validated
+## Completed analytical work
 
-- Consolidated the repository to one canonical `Notebooks/` directory containing six ordered notebooks.
-- Removed the duplicate notebook tree under `Dataset/Notebooks/` and the malformed nested README.
-- Added the state/UT dataset for rural PHC doctors in position, sanctioned positions and reported requirements for 2023, sourced from RBI Handbook Table 16.
-- Added a data dictionary documenting source fields, missing markers and the staffing-coverage ratio.
-- Repaired Notebook 06 cell structure, added the small-denominator sensitivity analysis, and clarified that the denominator is the source-reported PHC post requirement rather than population need.
-- Added the staffing-versus-IMR visualisation and embedded it in the README.
-- Updated the research report and README to distinguish evidence supported by current data from questions not yet answered.
-- Added GitHub Actions execution with in-place notebook output saving and a commit step.
-- Executed all six notebooks successfully; saved execution counts and outputs are present in the committed notebooks.
-- Passed the dataset, notebook syntax and analytical validation checks.
+- Consolidated the repository to one canonical `Notebooks/` directory.
+- Added and documented 2023 rural PHC doctor staffing data and the staffing-to-required-post ratio.
+- Clarified that the staffing denominator is an administrative PHC post requirement, not population need or doctors per capita.
+- Added small-denominator sensitivity analysis to Notebook 06.
+- Added the staffing-versus-IMR visualisation and README explanation.
+- Added NFHS-5 female literacy (women aged 15–49, 2019–21) and RBI per-capita NSDP (current prices, 2021–22) as state-level socioeconomic covariates.
+- Added Notebook 07 with an OLS model using HC3 robust standard errors, complete-case handling, VIF diagnostics and a small-denominator sensitivity model.
+- Added NHP-2023 government hospital bed counts dated 31 December 2022 and projected population as of 1 March 2021; calculated beds per 1,000 population for 36 states/UTs.
+- Added Notebook 08, a per-capita beds visualisation and data dictionary.
+- Updated the GitHub Actions workflow so output commits run only on pushes to `main`, are serialized to avoid concurrent push races, and use `[skip ci]` to prevent recursive workflow runs.
 
-## Validated workforce result
+## Adjusted workforce–IMR model
 
-For 34 matched states/UTs with a positive reported rural PHC doctor requirement:
-- Median in-position-to-required ratio: 1.38.
-- 10 of 34 observations were below the reported requirement.
-- Pearson correlation with 2023 IMR: approximately -0.538.
-- Spearman correlation with 2023 IMR: approximately -0.562.
-- With required PHC doctor denominator >= 50 (27 observations), Pearson r is approximately -0.498 and Spearman rho approximately -0.368.
+The bivariate staffing/IMR match contains 34 observations. The adjusted complete-case model contains 32 observations; the two matched observations without a separate 2021–22 RBI NSDP value are the combined Dadra & Nagar Haveli and Daman & Diu UT and Lakshadweep. No imputation is used.
 
-These are bivariate cross-sectional associations, not causal effects. The ratio is an administrative staffing-benchmark ratio, not population-adjusted doctor density. Small-denominator sensitivity is reported in Notebook 06.
+| Model | n | Staffing coefficient | HC3 SE | HC3 p-value | 95% CI |
+|---|---:|---:|---:|---:|---|
+| Unadjusted, common sample | 32 | -6.19 | 2.18 | 0.0046 | [-10.47, -1.91] |
+| Adjusted: log NSDP + NFHS-5 female literacy | 32 | -3.40 | 2.72 | 0.211 | [-8.72, 1.93] |
+| Adjusted, required PHC doctors >= 50 | 27 | -7.79 | 2.72 | 0.0042 | [-13.13, -2.46] |
 
-## Remaining extensions — not represented as completed
+- Adjusted model R-squared: 0.523; HC3 robust overall F-test p-value: 0.0042.
+- Female literacy coefficient: -0.392 per percentage point (HC3 p=0.0376).
+- Log NSDP coefficient: -4.19 (HC3 p=0.365).
+- VIFs for the three predictors are low (approximately 1.22–1.50).
 
-1. **Adjusted workforce–IMR regression:** Not yet estimated. Official per-capita NSDP values for 2022–23 are unavailable for a number of states/UTs, while the available female-literacy series is from Census 2011. Combining these would create a materially smaller complete-case sample and a wide reference-year gap relative to 2023 IMR. A regression can be run only after the final matched sample, source years and missingness are transparently documented; no missing values should be imputed merely to retain observations.
-2. **Population-adjusted government hospital beds:** Not yet estimated. RBI Handbook Table 17 reports absolute hospital/bed counts but does not specify a distinct observation year in the extracted table. Dividing those counts by a population estimate from a different year would create a misleading rate. A dated facility-count source or a verified observation year is needed.
-3. **Household affordability and catastrophic expenditure:** Not measured by national NHA aggregates; household microdata are required.
-4. **Rural–urban utilisation/access gaps:** Not measured by the current state aggregates; comparable facility/household data are required.
+Interpretation: the staffing coefficient is about 45% smaller after adjustment and its confidence interval includes zero. The bivariate association is therefore partly accounted for by the included socioeconomic controls in this sample. The restricted-sample result is stronger, illustrating sensitivity to sample definition. All models are exploratory cross-sectional associations, not causal estimates.
 
-## Reproducibility
+## Government hospital beds per 1,000 population
 
-The latest GitHub Actions run completed successfully:
-- Run: https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43881263925
-- Dataset and notebook validation: passed.
-- All six notebooks: executed successfully.
-- Notebook outputs: saved in the repository by the workflow.
+- Numerator: NHP-2023 Table 6.2.2 government hospital beds, as of 31 December 2022.
+- Denominator: NHP-2023 Table 1.1.2(d) projected population, as of 1 March 2021.
+- State/UT count: 36.
+- Median: 0.949 beds per 1,000 projected population.
+- Mean: 1.285.
+- Lowest: Bihar 0.215; highest: Lakshadweep 3.676.
 
-## Interpretation boundary
+The denominator is about 21 months earlier than the bed count. The rate covers government beds only. The 36 state/UT bed rows sum to 880,307, while the NHP India aggregate row reports 840,455 (a 39,852 discrepancy equal to the Andhra Pradesh row). The discrepancy is documented; no national aggregate rate is calculated from the inconsistent totals.
 
-The project is a secondary-data, descriptive and correlational analysis. It does not estimate causal effects or claim that the current aggregate indicators measure household-level access, financial hardship or service quality.
+## Reproducibility and remaining limitations
+
+- Eight notebooks are included in the canonical `Notebooks/` sequence.
+- The validator checks datasets, notebook syntax, analytical joins and expected complete-case sample sizes.
+- All notebooks are executed by GitHub Actions; executed cell outputs are committed on pushes to `main`.
+- The output-commit step is skipped for pull requests and uses `[skip ci]` to avoid a workflow loop.
+- The final workflow run for the current revision is pending; update this status only after it completes successfully.
+
+Remaining research limitations:
+1. The adjusted model controls for only income and female literacy; maternal health, nutrition, sanitation, fertility, urbanisation, transport and service quality remain omitted.
+2. Covariates predate the 2023 outcome (NFHS-5 2019–21; NSDP 2021–22).
+3. Household catastrophic expenditure and impoverishment require household microdata.
+4. The beds ratio has a 21-month numerator/denominator timing gap and an internal NHP aggregate reconciliation discrepancy.
+5. The analyses do not establish causal effects.
