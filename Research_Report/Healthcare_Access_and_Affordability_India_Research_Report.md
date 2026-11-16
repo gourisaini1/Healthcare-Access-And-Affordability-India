@@ -53,7 +53,7 @@ Official source links:
 
 ## 3. Methodology
 
-The project uses descriptive time-series analysis, state/UT comparisons, a derived staffing ratio and bivariate correlation.
+The project uses descriptive time-series analysis, state/UT comparisons, a derived staffing ratio, bivariate correlation and exploratory multivariable OLS regression.
 
 ### 3.1 National financing trend
 
