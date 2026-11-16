@@ -16,7 +16,7 @@
 - NSS 75th-round Table A17 state hospitalisation medical expenditure dataset, data dictionary, tenth notebook and thirteenth chart. The published table is gross medical expenditure, not net OOPE after reimbursement.
 - A root README explaining the project, empirical strategy, findings, reproducibility and interpretation boundaries.
 - Dataset, notebook and visualisation catalogues.
-- A project validator and GitHub Actions workflow that checks datasets and notebook syntax, executes all nine notebooks and saves outputs/figures on successful pushes to `main`.
+- A project validator and GitHub Actions workflow that checks datasets and notebook syntax, executes all ten notebooks and saves outputs/figures on successful pushes to `main`.
 
 ## Final empirical conclusions
 
@@ -44,7 +44,7 @@ done
 
 ## Research boundaries
 
-This is a secondary-data, descriptive and correlational health-economics project. It does not estimate causal effects. National OOPE shares are not household catastrophic-expenditure rates. The state-level staffing ratio uses administrative post requirements, not population need. The adjusted model has a small cross-section and only two socioeconomic controls. Household catastrophic expenditure, rural–urban utilisation, a harmonised state panel and stronger causal identification remain outside the completed evidence base and are clearly identified as future research—not presented as completed findings.
+This is a secondary-data, descriptive and correlational health-economics project. It does not estimate causal effects. National OOPE shares are not household catastrophic-expenditure rates. The state-level staffing ratio uses administrative post requirements, not population need. The adjusted model has a small cross-section and only two socioeconomic controls. State-level net OOPE after reimbursements, household catastrophic expenditure, rural–urban utilisation, a harmonised state panel and stronger causal identification remain outside the completed evidence base and are clearly identified as future research—not presented as completed findings.
 
 ## Canonical files
 
