@@ -287,19 +287,11 @@ Run notebooks 01–08 in order. Notebooks read source datasets from `../Dataset/
 
 GitHub Actions validates datasets, checks notebook syntax and executes all notebooks. Executed notebook outputs are committed only for pushes to `main`; pull-request runs do not attempt to push.
 
-## Limitations and next research steps
-
-1. **Household affordability:** NHA OOPE shares are national aggregates. Catastrophic expenditure, impoverishment due to medical spending and distribution by consumption quintile require household-level NSS/NFHS-compatible data.
-2. **Rural–urban access:** the PHC staffing table is rural-specific; the current project does not contain a comparable urban provider dataset or household utilisation data.
-3. **Socioeconomic controls and specification sensitivity:** the adjusted workforce–IMR regression includes two controls only. Maternal health, nutrition, sanitation, fertility, urbanisation, transport and health-system quality remain omitted. NFHS-5 literacy and 2021–22 NSDP predate the 2023 outcome and are not exactly contemporaneous. The staffing estimate is sensitive to logging the skewed ratio and to sample exclusions; the leave-one-out analysis is diagnostic, not a substitute for a larger sample or stronger design.
-4. **Population adjustment:** the hospital-bed ratio uses a 2021 projected population denominator with 2022 bed counts. The NHP source also has an internal state-row versus national aggregate discrepancy, documented in Notebook 08.
-5. **Causal inference:** the analyses are cross-sectional and observational. A causal evaluation would require a defensible identification strategy, not simply a larger regression.
-
 ## Project status
 
-**Version 3 exploratory extension.** Eight notebooks now cover national financing, state budgets, rural PHC staffing, an exploratory adjusted regression and population-adjusted government hospital beds. Notebook execution and output saving are validated through GitHub Actions; the latest run status is linked below.
+**Final consolidated research release.** Eight notebooks now cover national financing, state budgets, rural PHC staffing, an exploratory adjusted regression and population-adjusted government hospital beds. Notebook execution and output saving are validated through GitHub Actions; the latest run status is linked below.
 
-[Latest successful validation and notebook execution](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43896609894) · [All GitHub Actions runs](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions)
+[Latest successful validation and notebook execution](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43896918339) · [All GitHub Actions runs](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions)
 
 ---
 **Author:** Gouri Saini | **Field:** Economics / Health Economics
