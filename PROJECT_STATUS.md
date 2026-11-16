@@ -1,6 +1,6 @@
 # Project status — Version 3 exploratory extension
 
-**Status:** New socioeconomic regression and population-adjusted beds analyses added; final CI execution pending.  
+**Status:** Version 3 exploratory analyses completed; all eight notebooks and generated charts executed and saved successfully.  
 **Evidence cut-off:** 16 November 2026.
 
 ## Completed analytical work
@@ -50,7 +50,8 @@ The denominator is about 21 months earlier than the bed count. The rate covers g
 - The validator checks datasets, notebook syntax, analytical joins and expected complete-case sample sizes.
 - All notebooks are executed by GitHub Actions; executed cell outputs are committed on pushes to `main`.
 - The output-commit step is skipped for pull requests and uses `[skip ci]` to avoid a workflow loop.
-- The final workflow run for the current revision is pending; update this status only after it completes successfully.
+- Latest full validation and notebook-execution run: [GitHub Actions run 43886896461](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43886896461) — **success**.
+- Dataset validation: passed; all eight notebooks executed; generated SVG charts and notebook outputs committed to `main`.
 
 Remaining research limitations:
 1. The adjusted model controls for only income and female literacy; maternal health, nutrition, sanitation, fertility, urbanisation, transport and service quality remain omitted.
