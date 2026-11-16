@@ -4,7 +4,7 @@
 **Status:** Final consolidated research release  
 **Evidence cut-off:** 16 November 2026  
 **Canonical analysis:** Ten notebooks in `Notebooks/`  
-**Latest successful full validation:** pending for the ten-notebook affordability extension.
+**Latest successful full validation:** [GitHub Actions run 161](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43905126030) — all ten notebooks executed successfully.
 
 ## Final deliverables
 
@@ -31,7 +31,7 @@
 
 ## Reproducibility and quality controls
 
-The current ten-notebook release is being revalidated, including dataset checks, notebook syntax, full execution and generated outputs. Reproduce locally from the repository root:
+The ten-notebook release passed dataset checks, notebook syntax validation, full execution and generated-output commits in [run 161](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43905126030). Reproduce locally from the repository root:
 
 ```bash
 pip install -r requirements.txt
