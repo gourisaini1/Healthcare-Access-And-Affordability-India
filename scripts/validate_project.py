@@ -13,6 +13,8 @@ imr = pd.read_csv(DATA / "state_infant_mortality_rate_2023.csv")
 beds = pd.read_csv(DATA / "state_government_hospitals_and_beds_rbi_handbook_2024_25.csv")
 matched = pd.read_csv(DATA / "state_health_spending_imr_matched_exploratory.csv")
 staff = pd.read_csv(DATA / "state_rural_phc_doctors_2023.csv")
+socio = pd.read_csv(DATA / "state_socioeconomic_covariates_nfhs5_rbi.csv")
+beds_pc = pd.read_csv(DATA / "state_government_hospital_beds_nhp2023_per_1000.csv")
 
 assert len(nha) == 11 and nha.financial_year.is_monotonic_increasing
 assert nha.financial_year.iloc[-1] == "2023-24"
@@ -24,6 +26,13 @@ assert len(matched) == 31
 assert staff.state_ut.is_unique and len(staff) == 36
 assert staff.reference_year.eq(2023).all()
 assert staff.required_rural_phc_doctors.ge(0).all()
+assert len(socio) == 36 and socio.state_ut.is_unique
+assert socio.female_literacy_nfhs5_pct.between(0, 100).all()
+assert socio.per_capita_nsdp_2021_22_inr.notna().sum() == 33
+assert len(beds_pc) == 36 and beds_pc.state_ut.is_unique
+assert beds_pc.beds_reference_date.eq("2022-12-31").all()
+assert beds_pc.population_reference_date.eq("2021-03-01").all()
+assert (beds_pc.beds_per_1000_population - beds_pc.beds_total_nhp2023 / beds_pc.population_2021_projected_thousands).abs().max() < 0.00011
 
 r_budget, p_budget = pearsonr(
     matched.health_expenditure_share_2024_25_re_pct,
@@ -66,7 +75,7 @@ assert abs(r_staff - (-0.5378)) < 0.002, r_staff
 assert abs(rho_staff - (-0.5624)) < 0.002, rho_staff
 
 notebooks = sorted(NOTEBOOKS.glob("*.ipynb"))
-assert len(notebooks) == 6, [p.name for p in notebooks]
+assert len(notebooks) == 8, [p.name for p in notebooks]
 assert not (DATA / "Notebooks").exists(), "Duplicate notebook tree should not exist"
 for path in notebooks:
     with path.open(encoding="utf-8") as f:
@@ -81,3 +90,5 @@ print(f"NHA rows: {len(nha)}; state budget rows: {len(spend)}; matched budget/IM
 print(f"Budget-share vs IMR: Pearson r={r_budget:.4f}, p={p_budget:.4f}")
 print(f"Rural PHC staffing vs IMR: n={len(workforce)}, Pearson r={r_staff:.4f}, p={p_staff:.4f}")
 print(f"Rural PHC staffing vs IMR: Spearman rho={rho_staff:.4f}, p={p_rho_staff:.4f}")
+print(f"Socioeconomic covariates: {len(socio)} rows; NSDP non-missing={socio.per_capita_nsdp_2021_22_inr.notna().sum()}")
+print(f"Government beds per 1,000 population: {len(beds_pc)} state/UT rows")
