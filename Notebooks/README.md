@@ -1,12 +1,14 @@
-# Notebooks
+# Analysis notebooks
 
-This directory contains the Jupyter notebooks used in the healthcare access and affordability analysis.
+Run from this directory in numerical order. Each notebook reads source files from `../Dataset/`.
 
-## Planned notebooks
+| Notebook | Purpose |
+|---|---|
+| `01_National_Health_Accounts_Analysis.ipynb` | National financing trends, 2013–14 to 2023–24 |
+| `02_State_Health_Expenditure_Analysis.ipynb` | State/UT public health budget shares, 2023–24 and 2024–25 RE |
+| `03_Health_Outcomes_and_Expenditure.ipynb` | State infant mortality and the exploratory budget-share comparison |
+| `04_State_Hospital_Infrastructure_Analysis.ipynb` | Government hospital and bed counts; source-year caveat |
+| `05_Correlation_and_Regression_Analysis.ipynb` | Pearson, Spearman and simple regression for the mismatched-year budget/IMR comparison |
+| `06_Rural_Workforce_and_Health_Outcomes.ipynb` | Same-year 2023 rural PHC doctor staffing coverage and infant mortality |
 
-- `01_Data_Collection.ipynb` — retrieve and document source datasets.
-- `02_Data_Cleaning.ipynb` — inspect, clean and prepare the datasets.
-- `03_Exploratory_Data_Analysis.ipynb` — examine distributions, trends and regional differences.
-- `04_Statistical_Analysis.ipynb` — conduct descriptive and comparative statistical analysis.
-
-Each notebook will document its data sources, steps, assumptions and outputs. Analytical results will be added after the code has been run and validated.
+The sixth notebook is the principal analytical extension in Version 2. It uses an administrative staffing-coverage ratio and a same-year outcome measure. It remains an observational cross-sectional analysis and does not identify a causal effect.
