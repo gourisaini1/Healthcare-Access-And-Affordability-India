@@ -297,6 +297,12 @@ Files: [matched analysis dataset](Dataset/state_health_spending_imr_matched_expl
 
 **Interpretation:** this is an exploratory association, not a causal estimate or policy-effect evaluation. A stronger analysis requires comparable-year panel data and appropriate socioeconomic controls.
 
+## Project status
+
+**Version 1.0 is complete.** All five notebooks have passed automated execution in GitHub Actions, and the data-validation and notebook-syntax checks passed on the latest successful run.
+
+See [PROJECT_STATUS.md](PROJECT_STATUS.md) for the deliverables, validation record and optional Version 2 research extensions. [View successful validation run](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43877464216).
+
 ## 15. Research report and reproducibility
 
 The full research report, including the research questions, data sources, methods, findings, interpretation, limitations and references, is available here:
