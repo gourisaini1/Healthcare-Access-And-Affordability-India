@@ -41,7 +41,7 @@ This project examines India's health-financing mix, state public-health budgets,
 | Per-capita NSDP | FY2021–22, current prices | [RBI Handbook 2023–24, Table 26](https://nhm.tn.gov.in/wp-content/uploads/2026/Key_Statistics/RBI/RBI%20Statistics%20Handbook%202023-24.pdf) |
 | Female literacy, women aged 15–49 | NFHS-5, 2019–21 | [NFHS-5 India Report, Table 3.4.1](https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf) |
 | Household health insurance/financing coverage | NFHS-5, 2019–21 | [NFHS-5 India Report, Table 11.15 and Figure 11.2](https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf); [scheme inventory review (2023)](https://www.mdpi.com/2227-9032/11/9/1343) |
-| State hospitalisation medical expenditure | NSS 75th Round, 2017–18 | [MoSPI/NSO, Table A17](https://www.thehinducentre.com/resources/68921711-2019_75th-Round-NSSO_Final-Social-Consumption-of-Health.pdf) |
+| State hospitalisation medical expenditure | NSS 75th Round, 2017–18 | [MoSPI/NSO, Table A17](https://www.mospi.gov.in/sites/default/files/publication_reports/KI_Health_75th_Final.pdf) |
 | Government hospital beds | 31 December 2022 | [CBHI National Health Profile 2023, Table 6.2.2](https://cbhidghs.mohfw.gov.in/sites/default/files/NHP/NHP-2023-Last-Final.pdf) |
 | Projected population | 1 March 2021 | CBHI National Health Profile 2023, Table 1.1.2(d) |
 
