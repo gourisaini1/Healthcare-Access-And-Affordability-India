@@ -2,7 +2,7 @@
 
 **Status:** Eight analytical notebooks execute successfully; the main regression specification and robustness analysis are aligned across the notebook, README and research report.  
 **Evidence cut-off:** 16 November 2026.  
-**Latest successful full workflow:** [GitHub Actions run 43895861327](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43895861327).
+**Latest successful full workflow:** [GitHub Actions run 43896609894](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43896609894).
 
 ## Completed analytical work
 
@@ -58,7 +58,7 @@ The denominator is about 21 months earlier than the bed count. The rate covers g
 - GitHub Actions executes all eight notebooks and saves notebook outputs and generated SVG charts on pushes to `main`.
 - Pull-request runs validate and execute notebooks but do not attempt to push outputs.
 - The output-commit step rebases against the latest `main` before pushing to handle concurrent documentation updates.
-- Latest successful full validation and notebook-execution run: [run 43895861327](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43895861327).
+- Latest successful full validation and notebook-execution run: [run 43896609894](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43896609894).
 
 ## Remaining research limitations
 
