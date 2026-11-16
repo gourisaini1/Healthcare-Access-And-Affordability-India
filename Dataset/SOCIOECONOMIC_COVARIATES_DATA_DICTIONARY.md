@@ -15,7 +15,7 @@
 - Reference year: 2021–22.
 - Source: Reserve Bank of India, Handbook of Statistics on Indian States 2023–24, Table 26, base 2011–12; underlying source NSO, MoSPI.
   https://nhm.tn.gov.in/wp-content/uploads/2026/Key_Statistics/RBI/RBI%20Statistics%20Handbook%202023-24.pdf
-- Missing values are retained as missing. RBI does not report a separate 2021–22 observation for Ladakh, Lakshadweep, or the combined Dadra & Nagar Haveli and Daman & Diu UT in this table.
+- Missing values are retained as missing. RBI does not report a separate 2021–22 observation for Lakshadweep or the combined Dadra & Nagar Haveli and Daman & Diu UT in this table. Ladakh is not in the matched workforce–IMR sample.
 - The model uses the natural logarithm of per-capita NSDP to reduce scale skew. It is a nominal current-price measure; it is not adjusted for state-specific cost of living.
 
 ## Join and interpretation
