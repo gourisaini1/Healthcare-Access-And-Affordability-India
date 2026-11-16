@@ -17,7 +17,7 @@ Across 31 states/UTs, the 2024–25 Revised Estimate (RE) for Medical and Public
 
 The new rural workforce dataset reports doctors in position at rural PHCs relative to the source-reported requirement. Among 34 matched states/UTs with a positive requirement, 10 were below the reported requirement and 24 were at or above it. The median ratio was 1.38. Across these 34 observations, the Pearson correlation between staffing coverage and 2023 infant mortality was −0.538; the Spearman rank correlation was −0.562. These are cross-sectional associations, not causal effects. They may reflect broader differences in income, maternal education, nutrition, sanitation, fertility, transport, health infrastructure and public administration.
 
-The adjusted analysis uses 32 complete-case state/UT observations and compares two functional forms on the same sample. With the unlogged staffing ratio, the adjusted coefficient is −3.40 (HC3 p=0.211; 95% CI −8.72 to 1.93). With the natural log of the staffing ratio as the preferred specification, the coefficient is −7.62 (HC3 p=0.0345; 95% CI −14.68 to −0.56). The preferred log model has R-squared 0.555. In the sample with at least 50 required PHC doctors (n=27), the log-ratio coefficient is −10.87 (HC3 p=0.0076), while the linear-ratio coefficient is −7.79 (HC3 p=0.0042). Jointly excluding Goa and Delhi from the full log-ratio sample gives −11.25 (n=30; HC3 p=0.0021). Leave-one-state/UT-out coefficients range from −9.07 to −5.77, although some corresponding p-values exceed 0.05. These diagnostics show an inverse association under the main log specification and selected sensitivity specifications, but also show dependence on functional form and sample definition. NFHS-5 household insurance/financing coverage is also examined as a state-level financial-protection proxy: the national estimate is 41.0%, and state/UT coverage ranges from 1.8% to 87.8%. The correlation with nominal per-capita NSDP is close to zero (Pearson r=0.052, p=0.776; n=33). This measure indicates scheme reach, not adequacy of benefits or actual household out-of-pocket burden. The project still does not calculate catastrophic health expenditure or measure rural–urban utilisation gaps.
+The adjusted analysis uses 32 complete-case state/UT observations and compares two functional forms on the same sample. With the unlogged staffing ratio, the adjusted coefficient is −3.40 (HC3 p=0.211; 95% CI −8.72 to 1.93). With the natural log of the staffing ratio as the preferred specification, the coefficient is −7.62 (HC3 p=0.0345; 95% CI −14.68 to −0.56). The preferred log model has R-squared 0.555. In the sample with at least 50 required PHC doctors (n=27), the log-ratio coefficient is −10.87 (HC3 p=0.0076), while the linear-ratio coefficient is −7.79 (HC3 p=0.0042). Jointly excluding Goa and Delhi from the full log-ratio sample gives −11.25 (n=30; HC3 p=0.0021). Leave-one-state/UT-out coefficients range from −9.07 to −5.77, although some corresponding p-values exceed 0.05. These diagnostics show an inverse association under the main log specification and selected sensitivity specifications, but also show dependence on functional form and sample definition. NFHS-5 household insurance/financing coverage is examined as a state-level reach proxy: the national estimate is 41.0%, and state/UT coverage ranges from 1.8% to 87.8%. Its correlation with nominal per-capita NSDP is close to zero (Pearson r=0.052, p=0.776; n=33). A non-exhaustive published inventory identifies a state-specific scheme in 22 observations (mean coverage 50.8%, median 53.5%), compared with 14 observations not documented as having one (mean 29.0%, median 25.4%). This is consistent with state scheme design being one plausible influence on coverage, but it does not prove causality or that scheme choices matter more than income. The project also adds NSS 75th-round state hospital-stay medical expenditure; Table A17 reports gross expenditure, not net OOPE after reimbursement. Household-level net OOPE and catastrophic health expenditure remain unmeasured.
 
 ## 1. Research questions and scope
 
@@ -29,7 +29,8 @@ The empirical questions addressed in this report are:
 4. Is rural PHC doctor staffing coverage associated with infant mortality in 2023?
 5. How does government hospital-bed availability vary after adjusting for projected population?
 6. Does the staffing–IMR association persist after controlling for per-capita state income and female literacy?
-7. How does household health insurance/financing coverage vary across states/UTs, and how is it associated with per-capita NSDP?
+7. How does household health insurance/financing coverage vary across states/UTs, and how is it associated with per-capita NSDP and documented state scheme histories?
+8. How does average medical expenditure per hospitalisation vary by state/UT, hospital type and rural/urban sector?
 
 The following questions are recognised as important but are **not answered by the current evidence**: the household incidence of catastrophic health expenditure; differences in rural and urban healthcare utilisation and affordability; and causal effects of staffing or the full set of socioeconomic determinants of health outcomes.
 
@@ -43,7 +44,8 @@ The following questions are recognised as important but are **not answered by th
 | Rural PHC doctor staffing | Calendar 2023 | RBI Handbook 2024–25, Table 16 | Staffing relative to reported requirement |
 | Per-capita NSDP | FY2021–22, current prices | RBI Handbook 2023–24, Table 26 | Income control |
 | Female literacy | NFHS-5, 2019–21, women aged 15–49 | IIPS / MoHFW, NFHS-5 India Report, Table 3.4.1 | Education control |
-| Household health insurance/financing coverage | NFHS-5, 2019–21 | IIPS / ICF, NFHS-5 India Report, Table 11.15 and Figure 11.2 | State-level financial-protection proxy |
+| Household health insurance/financing coverage | NFHS-5, 2019–21 | IIPS / ICF, NFHS-5 India Report, Table 11.15 and Figure 11.2; published scheme inventory review (2023) | State-level coverage reach and descriptive scheme grouping |
+| Hospitalisation medical expenditure | NSS 75th Round, 2017–18 | NSO, *Key Indicators of Social Consumption in India: Health*, Table A17 | Gross average medical expenditure per hospitalisation case, by state/UT, sector and hospital type |
 | Government hospital beds | 31 December 2022 | CBHI, National Health Profile 2023, Table 6.2.2 | Beds numerator |
 | Projected population | 1 March 2021 | CBHI, National Health Profile 2023, Table 1.1.2(d) | Population denominator for beds per 1,000 |
 
@@ -92,7 +94,11 @@ The dependent variable is 2023 IMR (deaths per 1,000 live births). The principal
 
 The state-level coverage measure is the percentage of households with at least one usual member covered by any health insurance or financing scheme, from NFHS-5 Table 11.15 (2019–21). It is interpreted as scheme reach, not as the adequacy of cover, successful claim payment, utilisation or a reduction in out-of-pocket spending. The correlation with nominal per-capita NSDP at current prices in FY2021–22 is calculated on the 33 state/UTs with a separate NSDP observation; missing NSDP values are not imputed.
 
-### 3.7 Population-adjusted government hospital beds
+### 3.7 State-level hospitalisation medical expenditure
+
+Average medical expenditure per hospitalisation case (excluding childbirth) is taken from NSS 75th Round Table A17 (July 2017–June 2018). The table provides state/UT estimates separately for government/public, private and all hospitals (including charitable/NGO/trust-run), with rural, urban and combined rural+urban estimates. The headline comparison uses the all-hospital rural+urban column. These values are gross medical expenditure incurred during hospital stay, not net out-of-pocket expenditure after reimbursements. Table A21 provides reimbursement percentages at national level by sector and expenditure quintile, not a state-level net OOPE adjustment. The NSS microdata portal requires login for unit-level data; no state-level net OOPE estimate is claimed. The 2017–18 geography predates the creation of Ladakh and the merger of Dadra & Nagar Haveli with Daman & Diu, so the historical state/UT rows are retained as published.
+
+### 3.8 Population-adjusted government hospital beds
 
 Government hospital bed counts are taken from NHP-2023 Table 6.2.2, whose title dates the counts to 31 December 2022. The denominator is projected state/UT population as of 1 March 2021 from NHP-2023 Table 1.1.2(d), in thousands. Beds per 1,000 population are calculated as beds divided by population in thousands. The combined Dadra & Nagar Haveli and Daman & Diu population is the sum of the two separately projected populations. The 21-month reference-date gap is disclosed; the indicator is approximate.
 
@@ -167,7 +173,15 @@ The numerator is dated 31 December 2022; the population denominator is projected
 
 ### 4.7 Household health insurance/financing coverage
 
-NFHS-5 reports that 41.0% of households nationally had at least one usual member covered by a health insurance or financing scheme. Across the 36 state/UT rows, coverage ranges from 1.8% in Andaman & Nicobar Islands to 87.8% in Rajasthan. For the 33 state/UTs with a separate FY2021–22 per-capita NSDP observation, Pearson correlation between nominal per-capita NSDP and household coverage is 0.052 (p=0.776). This is close to zero in this small, unweighted cross-section. It should not be interpreted as evidence that income is irrelevant to financial protection: the measure is an aggregate household coverage rate, the income series is nominal and not contemporaneous, and the analysis does not adjust for state policy, demographic or scheme design differences. Insurance coverage does not guarantee adequate benefits or eliminate out-of-pocket spending.
+NFHS-5 reports that 41.0% of households nationally had at least one usual member covered by a health insurance or financing scheme. Across the 36 state/UT rows, coverage ranges from 1.8% in Andaman & Nicobar Islands to 87.8% in Rajasthan. For the 33 state/UTs with a separate FY2021–22 per-capita NSDP observation, Pearson correlation between nominal per-capita NSDP and household coverage is 0.052 (p=0.776). This is close to zero in this small, unweighted cross-section. It should not be interpreted as evidence that income is irrelevant to financial protection: the measure is an aggregate household coverage rate, the income series is nominal and not contemporaneous, and the analysis does not adjust for state policy, demographic or scheme design differences. Insurance coverage does not guarantee adequate benefits or eliminate out-of-pocket spending. A plausible explanation is that this indicator captures whether a household is reached by a financing scheme, and that reach may reflect state programme design and eligibility choices as well as income. The four examples highlighted by the scheme inventory include Rajasthan (87.8%), Andhra Pradesh (80.2%), Telangana (69.2%) and Tamil Nadu (66.5%), while Delhi (25.0%) and Maharashtra (22.4%) demonstrate that income and coverage do not move together mechanically.
+
+A non-exhaustive inventory of state-specific government schemes identifies 22 state/UT observations with a documented scheme and 14 without one documented (including Tripura, for which the inventory lists central RSBY/PM-JAY rather than a state-funded programme). Mean household coverage is 50.8% (median 53.5%) in the documented-scheme group and 29.0% (median 25.4%) in the not-documented group. The inventory itself states it is not exhaustive, and several schemes were merged with PM-JAY. The group difference is descriptive and unweighted; it does not establish a causal effect or prove that state scheme choices matter more than income. `Not documented` does not mean no scheme existed.
+
+**A&N source discrepancy:** NFHS-5 India Report Table 11.15 gives 1.8% for Andaman & Nicobar Islands; the Government's Phase-I state fact sheet reports 1.6% for the same indicator. The analysis retains 1.8% to match the national state/UT comparison table and flags the discrepancy rather than silently changing the observation. Insurance coverage does not guarantee adequate benefits or eliminate out-of-pocket spending.
+
+### 4.8 State-level hospitalisation medical expenditure
+
+NSS 75th-round Table A17 reports the average medical expenditure incurred during hospital stay per case of hospitalisation, excluding childbirth. Using the all-hospital rural+urban column, the state/UT values range from ₹4,754 in Arunachal Pradesh to ₹54,870 in Chandigarh. The source also separates public and private hospitals and rural and urban sectors, allowing the analysis to retain these distinctions rather than collapse them. This is a useful observed spending measure alongside insurance reach, but it is gross medical expenditure—not net OOPE after reimbursement. It cannot be interpreted as household financial burden without accounting for reimbursements, case mix, income/consumption and the probability of hospitalisation.
 
 ## 5. Economic interpretation
 
@@ -175,7 +189,7 @@ The national NHA series documents a shift in the financing mix, but the persiste
 
 The new workforce analysis suggests that rural PHC doctor staffing relative to administrative requirements is associated with infant mortality across states/UTs. This is consistent with the proposition that primary-care capacity matters for health outcomes, but the design cannot isolate the contribution of staffing from broader social and institutional conditions.
 
-A policy interpretation should therefore avoid single-indicator rankings. Better evidence would combine financial protection, population-adjusted capacity, workforce distribution, service utilisation and social determinants.
+A policy interpretation should therefore avoid single-indicator rankings. The near-zero income correlation in NFHS-5 coverage, alongside the higher mean coverage among states with a documented state-specific scheme, suggests state policy and scheme design are plausible contributors to enrolment reach. However, the non-exhaustive inventory and cross-sectional group comparison do not establish relative causal importance. The NSS gross expenditure data adds a state-level spending dimension but is not a substitute for net OOPE. Better evidence would combine reimbursement-adjusted household spending, scheme eligibility and implementation histories, population-adjusted capacity, workforce distribution, service utilisation and social determinants.
 
 ## 6. Limitations
 
@@ -190,7 +204,8 @@ A policy interpretation should therefore avoid single-indicator rankings. Better
 9. Hospital-bed rates combine a 2022-12-31 numerator with a 2021-03-01 projected population denominator.
 10. The NHP state-row bed sum does not reconcile with the published India aggregate; the discrepancy is disclosed.
 11. NFHS-5 household insurance coverage measures whether any usual member is covered, not benefit adequacy, claim payment, out-of-pocket expenditure or catastrophic spending.
-12. The project does not yet calculate household catastrophic expenditure or impoverishment measures.
+12. The NSS 75th-round Table A17 values are gross medical expenditure during hospital stay, not state-level net OOPE after reimbursement; microdata-based net OOPE remains a further task.
+13. The project does not yet calculate household catastrophic expenditure or impoverishment measures.
 
 ## 7. Further research
 
@@ -198,4 +213,4 @@ The next empirical extension should add household-level medical expenditure data
 
 ## 8. Reproducibility
 
-The repository contains nine canonical Jupyter notebooks, source CSVs, data dictionaries, visualisations, a research report and a GitHub Actions workflow. The workflow validates source files, checks notebook syntax and executes all notebooks; executed notebooks and generated SVG visualisations are committed on pushes to main. Pull-request runs do not attempt to push. The output commit uses a CI-skip marker to prevent recursive workflow runs.
+The repository contains ten canonical Jupyter notebooks, source CSVs, data dictionaries, visualisations, a research report and a GitHub Actions workflow. The workflow validates source files, checks notebook syntax and executes all notebooks; executed notebooks and generated SVG visualisations are committed on pushes to main. Pull-request runs do not attempt to push. The output commit uses a CI-skip marker to prevent recursive workflow runs.
