@@ -16,6 +16,7 @@ staff = pd.read_csv(DATA / "state_rural_phc_doctors_2023.csv")
 socio = pd.read_csv(DATA / "state_socioeconomic_covariates_nfhs5_rbi.csv")
 beds_pc = pd.read_csv(DATA / "state_government_hospital_beds_nhp2023_per_1000.csv")
 insurance = pd.read_csv(DATA / "state_health_insurance_coverage_nfhs5.csv")
+nss75 = pd.read_csv(DATA / "state_hospitalisation_medical_expenditure_nss75.csv")
 
 assert len(nha) == 11 and nha.financial_year.is_monotonic_increasing
 assert nha.financial_year.iloc[-1] == "2023-24"
@@ -33,6 +34,10 @@ assert socio.per_capita_nsdp_2021_22_inr.notna().sum() == 33
 assert insurance.state_ut.is_unique and len(insurance) == 36
 assert insurance.households_any_member_covered_pct.between(0, 100).all()
 assert insurance.reference_period.eq("2019-21").all()
+assert insurance.state_scheme_documented_in_inventory.value_counts().to_dict() == {"Not documented": 14, "Yes": 22}
+assert nss75.state_ut_2017.is_unique and len(nss75) == 36
+assert nss75.reference_period.eq("2017-18").all()
+assert nss75.all_hospitals_rural_urban_inr.between(4000, 60000).all()
 assert beds_pc.state_ut.is_unique and len(beds_pc) > 0
 assert beds_pc.beds_reference_date.eq("2022-12-31").all()
 assert beds_pc.population_reference_date.eq("2021-03-01").all()
@@ -99,7 +104,7 @@ assert len(insurance_analysis) == 33, len(insurance_analysis)
 assert 0.04 < r_insurance_nsdp < 0.07, r_insurance_nsdp
 
 notebooks = sorted(NOTEBOOKS.glob("*.ipynb"))
-assert len(notebooks) == 9, [p.name for p in notebooks]
+assert len(notebooks) == 10, [p.name for p in notebooks]
 assert not (DATA / "Notebooks").exists(), "Duplicate notebook tree should not exist"
 for path in notebooks:
     with path.open(encoding="utf-8") as f:
@@ -116,5 +121,8 @@ print(f"Rural PHC staffing vs IMR: n={len(workforce)}, Pearson r={r_staff:.4f}, 
 print(f"Rural PHC staffing vs IMR: Spearman rho={rho_staff:.4f}, p={p_rho_staff:.4f}")
 print(f"Socioeconomic covariates: {len(socio)} rows; NSDP non-missing={socio.per_capita_nsdp_2021_22_inr.notna().sum()}")
 print(f"Government beds per 1,000 population: {len(beds_pc)} state/UT rows")
+scheme_group = insurance.groupby('state_scheme_documented_in_inventory').households_any_member_covered_pct.agg(['count', 'mean', 'median'])
 print(f"NFHS-5 household insurance coverage: {len(insurance)} state/UT rows; coverage–NSDP Pearson r={r_insurance_nsdp:.4f}, p={p_insurance_nsdp:.4f}, n={len(insurance_analysis)}")
+print(f"Scheme inventory group means: {scheme_group.to_dict()}")
+print(f"NSS 75th-round hospital expenditure: {len(nss75)} historical state/UT rows; all-hospital rural+urban median ₹{nss75.all_hospitals_rural_urban_inr.median():,.0f}")
 print(f"Adjusted complete-case model sample: {len(adjusted_sample)}; excluded: {sorted(set(workforce.state_ut) - set(adjusted_sample.state_ut))}")
