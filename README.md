@@ -12,7 +12,7 @@ This repository examines national health financing, state-level public health bu
 - Across 31 states/UTs, the 2024–25 Revised Estimate for Medical and Public Health and Family Welfare averaged **6.1% of aggregate expenditure** (median 5.9%). This is a budget-composition measure, not spending per person or health-system performance.
 - In the 2023 rural PHC staffing table, **10 of 34 matched states/UTs** with a calculable staffing ratio were below the reported doctor requirement; 24 were at or above it. The median in-position-to-required ratio was **1.38**.
 - In the full 34-state/UT bivariate sample, the staffing ratio and 2023 infant mortality had Pearson r = **−0.538** and Spearman rho = **−0.562**. Excluding observations with fewer than 50 required PHC doctors (27 observations) gives Pearson r = **−0.498** and Spearman rho = **−0.368**.
-- **Adjusted workforce–IMR association (32 complete cases): results depend on specification.** With the original unlogged staffing ratio and socioeconomic controls, the coefficient is **−3.40** (HC3 p = 0.211). Using the log staffing ratio as the main specification gives **−7.62** (HC3 p = 0.03). Excluding states/UTs with fewer than 50 required PHC doctors gives **−7.79** (HC3 p = 0.004), while jointly excluding Goa and Delhi gives **−7.93** (HC3 p = 0.001). The log specification is preferred because the raw staffing ratio is heavily right-skewed, but the estimates remain sensitive to functional form and sample composition. These are exploratory associations, not causal effects.
+- **Adjusted workforce–IMR association (32 complete cases): results depend on specification.** With the original unlogged staffing ratio and socioeconomic controls, the coefficient is **−3.40** (HC3 p = 0.211). Using the log staffing ratio as the main specification gives **−7.62** (HC3 p = 0.0345; 95% CI −14.68 to −0.56). In the restricted sample with at least 50 required PHC doctors (n = 27), the log-ratio coefficient is **−10.87** (p = 0.0076), while the corresponding linear-ratio coefficient is **−7.79** (p = 0.0042). Jointly excluding Goa and Delhi from the full log-ratio model gives **−11.25** (n = 30; p = 0.0021). Leave-one-state/UT-out log-ratio estimates range from **−9.07 to −5.77**; some exclusions make the p-value exceed 0.05. The log specification is preferred because the raw staffing ratio is heavily right-skewed, but functional form and sample composition matter. These are exploratory associations, not causal effects.
 - Government hospital beds per 1,000 projected population (NHP-2023 bed counts, 31 Dec 2022, divided by NHP projected population as of 1 Mar 2021) have a state/UT median of **0.949** and mean of **1.285**. This is government-sector capacity only and uses a population denominator about 21 months earlier.
 
 ## Research questions and evidence coverage
@@ -80,9 +80,19 @@ Notebook 06 constructs the ratio: `in-position rural PHC doctors / required rura
 
 ![Adjusted and unadjusted staffing coefficient](Visualisations/11_adjusted_regression_staffing_coefficient.svg)
 
-Notebook 07's main adjusted specification uses the natural log of the staffing ratio because the raw in-position-to-required ratio is heavily right-skewed; logging compresses unusually high values in the upper tail. It controls for log per-capita NSDP (2021–22) and NFHS-5 female literacy among women aged 15–49 (2019–21), with HC3 heteroskedasticity-robust standard errors. On the 32-state/UT complete-case sample, the log-ratio staffing coefficient is **−7.62** (HC3 p = **0.03**). The original linear-ratio adjusted model on the same sample gives **−3.40** (HC3 p = **0.211**). The log-ratio estimate is **−7.79** (p = **0.004**) after excluding observations with fewer than 50 required PHC doctors, and **−7.93** (p = **0.001**) after jointly excluding Goa and Delhi. Notebook 07 also reports a leave-one-state/UT-out table for the log-ratio model, so readers can see how the coefficient and uncertainty change when each observation is removed.
+Notebook 07's main adjusted specification uses the natural log of the staffing ratio because the raw in-position-to-required ratio is heavily right-skewed; logging compresses unusually high values in the upper tail. It controls for log per-capita NSDP (2021–22) and NFHS-5 female literacy among women aged 15–49 (2019–21), with HC3 heteroskedasticity-robust standard errors. On the 32-state/UT complete-case sample, the log-ratio staffing coefficient is **−7.62** (HC3 p = **0.0345**, 95% CI **−14.68 to −0.56**). The original linear-ratio adjusted model on the same sample gives **−3.40** (HC3 p = **0.2114**, 95% CI **−8.72 to 1.93**).
 
-The negative association is therefore supported under the log-ratio and selected restricted-sample specifications, but not under the original linear-ratio adjusted model. The headline is specification-sensitive: it would be misleading to present either the linear-model attenuation or the log-model significance as the only result. All estimates are exploratory, small-sample associations; they do not establish causality and remain vulnerable to omitted confounders.
+The specification and sample checks are reported separately:
+
+| Specification | n | Staffing coefficient | HC3 p-value |
+|---|---:|---:|---:|
+| Linear ratio, full adjusted sample | 32 | −3.40 | 0.2114 |
+| Log ratio, full adjusted sample (main) | 32 | −7.62 | 0.0345 |
+| Linear ratio, required PHC doctors ≥ 50 | 27 | −7.79 | 0.0042 |
+| Log ratio, required PHC doctors ≥ 50 | 27 | −10.87 | 0.0076 |
+| Log ratio, exclude Goa and Delhi jointly | 30 | −11.25 | 0.0021 |
+
+The leave-one-state/UT-out log-ratio coefficients range from **−9.07** (excluding Goa) to **−5.77** (excluding Manipur). Some leave-one-out p-values exceed 0.05, so the result is not uniformly statistically significant under every one-state deletion. These are diagnostics of influence, not grounds for discarding observations. The negative association is present in the main log specification and the two restricted log specifications, but the original linear full-sample model is not statistically distinguishable from zero. The correct conclusion is specification-sensitive evidence of an inverse association, not a causal effect. Omitted confounders, non-contemporaneous controls and the small state/UT sample remain important limitations.
 
 ### 5. Government hospital beds per 1,000 population
 
@@ -289,7 +299,7 @@ GitHub Actions validates datasets, checks notebook syntax and executes all noteb
 
 **Version 3 exploratory extension.** Eight notebooks now cover national financing, state budgets, rural PHC staffing, an exploratory adjusted regression and population-adjusted government hospital beds. Notebook execution and output saving are validated through GitHub Actions; the latest run status is linked below.
 
-[Latest successful validation and notebook execution](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43886896461) · [All GitHub Actions runs](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions)
+[Latest successful validation and notebook execution](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43895861327) · [All GitHub Actions runs](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions)
 
 ---
 **Author:** Gouri Saini | **Field:** Economics / Health Economics
