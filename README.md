@@ -285,7 +285,19 @@ Files: [hospital and beds dataset](Dataset/state_government_hospitals_and_beds_r
 
 **Source:** RBI, [Handbook of Statistics on Indian States 2024–25, Table 17](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23466). The source notes that government hospitals include central, state and local government bodies, and that Delhi and Chandigarh have no rural area.
 
-## 14. Tools and Technologies
+## 14. Exploratory statistical relationship: expenditure share and infant mortality
+
+The project combines 31 state/UT observations for an exploratory cross-sectional comparison. The health expenditure variable is the 2024–25 Revised Estimate of Medical and Public Health and Family Welfare expenditure as a percentage of aggregate expenditure. The health outcome variable is the 2023 infant mortality rate (infant deaths per 1,000 live births).
+
+![Exploratory scatter plot of health expenditure share and infant mortality](Visualisations/08_health_spending_vs_imr_scatter.svg)
+
+The Pearson correlation in this matched sample is **0.044** (31 observations), indicating almost no linear association between these two specific measures in this sample. This should not be interpreted as evidence that health expenditure has no effect on health outcomes. The spending measure is a budget share, not expenditure per person or actual service delivery; the two indicators refer to different periods; and the analysis does not control for income, nutrition, sanitation, maternal education, urbanisation, workforce availability or other confounding factors.
+
+Files: [matched analysis dataset](Dataset/state_health_spending_imr_matched_exploratory.csv), [correlation and regression notebook](Notebooks/05_Correlation_and_Regression_Analysis.ipynb).
+
+**Interpretation:** this is an exploratory association, not a causal estimate or policy-effect evaluation. A stronger analysis requires comparable-year panel data and appropriate socioeconomic controls.
+
+## 15. Tools and Technologies
 
 | Technology | Application |
 |---|---|
@@ -298,7 +310,7 @@ Files: [hospital and beds dataset](Dataset/state_government_hospitals_and_beds_r
 | Jupyter Notebook | Interactive analysis and documentation |
 | GitHub | Project documentation and version control |
 
-## 15. Expected Research Contributions
+## 16. Expected Research Contributions
 
 The project aims to provide:
 
@@ -308,7 +320,7 @@ The project aims to provide:
 - An understanding of socioeconomic barriers to healthcare affordability.
 - Evidence-based recommendations for strengthening healthcare access and financial protection.
 
-## 16. Limitations of the Study
+## 17. Limitations of the Study
 
 The study acknowledges the following limitations:
 
@@ -319,7 +331,7 @@ The study acknowledges the following limitations:
 - Correlation between healthcare expenditure and health outcomes does not establish causation.
 - The study relies on secondary data and is subject to the limitations of the original data sources.
 
-## 17. Repository Structure
+## 18. Repository Structure
 
 ```text
 Healthcare-Access-and-Affordability-India/
@@ -343,7 +355,7 @@ Healthcare-Access-and-Affordability-India/
 └── requirements.txt
 ```
 
-## 18. References
+## 19. References
 
 1. Ministry of Health and Family Welfare, Government of India. National Health Accounts Estimates for India 2021-22.
 2. Ministry of Health and Family Welfare, Government of India. Rural Health Statistics 2021-22.
@@ -351,7 +363,7 @@ Healthcare-Access-and-Affordability-India/
 4. World Bank. World Development Indicators.
 5. National Health Systems Resource Centre (NHSRC). National Health Accounts.
 
-## 19. Author
+## 20. Author
 
 **Gouri Saini**
 
