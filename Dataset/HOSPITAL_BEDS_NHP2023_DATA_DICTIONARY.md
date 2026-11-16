@@ -10,3 +10,5 @@
 - Source consistency note: the 36 state/UT bed rows sum to 880,307, while the NHP India aggregate row reports 840,455, a 39,852 discrepancy equal to the Andhra Pradesh row. State-level rates use the published state rows; no national rate is calculated from the inconsistent aggregate.
 - Source: Central Bureau of Health Intelligence, National Health Profile 2023, Table 6.2.2 (p.263) and Table 1.1.2(d) (pp.15–16).
   https://cbhidghs.mohfw.gov.in/sites/default/files/NHP/NHP-2023-Last-Final.pdf
+
+- Maharashtra source check: NHP-2023 Table 6.2.2 reports 10,920 rural beds + 16,417 urban beds = 27,337 total (0.2197 per 1,000 using the 2021 projected population of 124,437 thousand). This is second-lowest among the 36 state/UT rows, above only Bihar. The table notes contain no Maharashtra-specific footnote or adjustment; they define government hospitals and note that Delhi and Chandigarh have no rural area. The published Maharashtra value is therefore retained and explicitly flagged as unusual rather than altered.
