@@ -140,7 +140,7 @@ The GitHub Actions workflow validates the CSVs, checks notebook syntax and execu
 
 ## Project status
 
-**Version 2 analytical expansion in progress.** The repository now has a consolidated notebook structure, a new same-year rural workforce analysis and tighter research-question scope. CI validation is used to check reproducibility; the final status will be updated after the expanded workflow passes.
+**Version 2 baseline validated.** All six notebooks execute successfully in GitHub Actions, and the executed notebooks (including saved cell outputs) are committed to the repository. The current baseline remains descriptive and bivariate. A defensible adjusted workforce–IMR model and population-adjusted hospital-bed rate are not yet included because the available covariates and infrastructure counts do not have sufficiently aligned coverage/reference years. These are explicitly treated as further research rather than silently estimated from incomplete or mismatched data.
 
 ---
 **Author:** Gouri Saini | **Field:** Economics / Health Economics
