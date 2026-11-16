@@ -212,7 +212,7 @@ Examine how income levels, population distribution and regional economic conditi
 
 Compare healthcare infrastructure, expenditure and selected health indicators across states to identify disparities.
 
-## ## 10. Data Visualisation and Exploratory Analysis
+## 10. Data Visualisation and Exploratory Analysis
 
 The following figures are generated from the committed National Health Accounts dataset covering 2013–14 to 2023–24. They are national-level descriptive charts, not state-level comparisons.
 
@@ -245,7 +245,19 @@ This figure compares the shares of total health expenditure attributed to social
 **Scope:** the latest National Health Accounts observation used here is 2023–24. These figures must not be described as 2024–25 data. The charts are descriptive and do not establish causal relationships.
 
 
-## 11. Tools and Technologies
+## 11. State-wise public health expenditure (2024–25 RE)
+
+The Reserve Bank of India publishes state/UT-level expenditure on Medical and Public Health and Family Welfare as a percentage of aggregate expenditure. The 2024–25 values are **Revised Estimates (RE)**, not final audited accounts.
+
+![State-wise public health expenditure share, 2024–25 revised estimates](Visualisations/05_state_health_expenditure_share_2024_25_RE.svg)
+
+The chart compares the proportion of each state's/UT's aggregate expenditure allocated to these health-related functions. It is a measure of budget composition—not absolute rupee spending, spending per person, healthcare access, service quality, or health outcomes. State fiscal structures and aggregate expenditure denominators differ, so the percentages should not be interpreted as a direct ranking of healthcare performance.
+
+The underlying data are in [state_health_expenditure_share_rbi_2024_25_re.csv](Dataset/state_health_expenditure_share_rbi_2024_25_re.csv), with definitions and caveats in [the data dictionary](Dataset/STATE_HEALTH_EXPENDITURE_DATA_DICTIONARY.md). The analysis notebook is [02_State_Health_Expenditure_Analysis.ipynb](Notebooks/02_State_Health_Expenditure_Analysis.ipynb).
+
+**Source:** Reserve Bank of India, *State Finances: A Study of Budgets of 2025–26*, Statement 27, “Expenditure on Medical and Public Health and Family Welfare — As per cent of Aggregate Expenditure”, published 23 January 2026. [Official RBI table](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23736).
+
+## 12. Tools and Technologies
 
 | Technology | Application |
 |---|---|
@@ -258,7 +270,7 @@ This figure compares the shares of total health expenditure attributed to social
 | Jupyter Notebook | Interactive analysis and documentation |
 | GitHub | Project documentation and version control |
 
-## 12. Expected Research Contributions
+## 13. Expected Research Contributions
 
 The project aims to provide:
 
@@ -268,7 +280,7 @@ The project aims to provide:
 - An understanding of socioeconomic barriers to healthcare affordability.
 - Evidence-based recommendations for strengthening healthcare access and financial protection.
 
-## 13. Limitations of the Study
+## 14. Limitations of the Study
 
 The study acknowledges the following limitations:
 
@@ -279,7 +291,7 @@ The study acknowledges the following limitations:
 - Correlation between healthcare expenditure and health outcomes does not establish causation.
 - The study relies on secondary data and is subject to the limitations of the original data sources.
 
-## 14. Repository Structure
+## 15. Repository Structure
 
 ```text
 Healthcare-Access-and-Affordability-India/
@@ -303,7 +315,7 @@ Healthcare-Access-and-Affordability-India/
 └── requirements.txt
 ```
 
-## 15. References
+## 16. References
 
 1. Ministry of Health and Family Welfare, Government of India. National Health Accounts Estimates for India 2021-22.
 2. Ministry of Health and Family Welfare, Government of India. Rural Health Statistics 2021-22.
@@ -311,7 +323,7 @@ Healthcare-Access-and-Affordability-India/
 4. World Bank. World Development Indicators.
 5. National Health Systems Resource Centre (NHSRC). National Health Accounts.
 
-## 16. Author
+## 17. Author
 
 **Gouri Saini**
 
