@@ -1,37 +1,37 @@
-state_ut,households_any_member_covered_pct,reference_period,source_table
-"Andaman & Nicobar Islands",1.8,2019-21,NFHS-5 Table 11.15
-"Andhra Pradesh",80.2,2019-21,NFHS-5 Table 11.15
-"Arunachal Pradesh",29.3,2019-21,NFHS-5 Table 11.15
-"Assam",66.7,2019-21,NFHS-5 Table 11.15
-"Bihar",17.4,2019-21,NFHS-5 Table 11.15
-"Chandigarh",32.2,2019-21,NFHS-5 Table 11.15
-"Chhattisgarh",71.4,2019-21,NFHS-5 Table 11.15
-"Dadra & Nagar Haveli & Daman & Diu",56.6,2019-21,NFHS-5 Table 11.15
-"Delhi",25,2019-21,NFHS-5 Table 11.15
-"Goa",73.1,2019-21,NFHS-5 Table 11.15
-"Gujarat",44.4,2019-21,NFHS-5 Table 11.15
-"Haryana",25.7,2019-21,NFHS-5 Table 11.15
-"Himachal Pradesh",38.9,2019-21,NFHS-5 Table 11.15
-"Jammu & Kashmir",13.8,2019-21,NFHS-5 Table 11.15
-"Jharkhand",50.3,2019-21,NFHS-5 Table 11.15
-"Karnataka",31.8,2019-21,NFHS-5 Table 11.15
-"Kerala",57.8,2019-21,NFHS-5 Table 11.15
-"Lakshadweep",67.7,2019-21,NFHS-5 Table 11.15
-"Ladakh",17.1,2019-21,NFHS-5 Table 11.15
-"Madhya Pradesh",38.1,2019-21,NFHS-5 Table 11.15
-"Maharashtra",22.4,2019-21,NFHS-5 Table 11.15
-"Manipur",16.4,2019-21,NFHS-5 Table 11.15
-"Meghalaya",69,2019-21,NFHS-5 Table 11.15
-"Mizoram",50.3,2019-21,NFHS-5 Table 11.15
-"Nagaland",22,2019-21,NFHS-5 Table 11.15
-"Odisha",47.9,2019-21,NFHS-5 Table 11.15
-"Puducherry",30.1,2019-21,NFHS-5 Table 11.15
-"Punjab",25.2,2019-21,NFHS-5 Table 11.15
-"Rajasthan",87.8,2019-21,NFHS-5 Table 11.15
-"Sikkim",28,2019-21,NFHS-5 Table 11.15
-"Tamil Nadu",66.5,2019-21,NFHS-5 Table 11.15
-"Telangana",69.2,2019-21,NFHS-5 Table 11.15
-"Tripura",36.4,2019-21,NFHS-5 Table 11.15
-"Uttar Pradesh",15.9,2019-21,NFHS-5 Table 11.15
-"Uttarakhand",62.5,2019-21,NFHS-5 Table 11.15
-"West Bengal",33.7,2019-21,NFHS-5 Table 11.15
+state_ut,households_any_member_covered_pct,reference_period,source_table,state_scheme_documented_in_inventory,state_scheme_name_or_note
+"Andaman & Nicobar Islands",1.8,2019-21,NFHS-5 Table 11.15,Yes,"Andaman & Nicobar Islands Scheme for Health Insurance (merged with PM-JAY in 2019)"
+"Andhra Pradesh",80.2,2019-21,NFHS-5 Table 11.15,Yes,"Aarogyashree / YSR Aarogyasri"
+"Arunachal Pradesh",29.3,2019-21,NFHS-5 Table 11.15,Yes,"Chief Minister’s Universal Health Insurance Scheme (merged with PM-JAY in 2018)"
+"Assam",66.7,2019-21,NFHS-5 Table 11.15,Yes,"Atal Amrit Abhiyan"
+"Bihar",17.4,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Chandigarh",32.2,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Chhattisgarh",71.4,2019-21,NFHS-5 Table 11.15,Yes,"Mukhya Mantri Swasthya Bima Yojana (integrated with PM-JAY in 2019)"
+"Dadra & Nagar Haveli & Daman & Diu",56.6,2019-21,NFHS-5 Table 11.15,Yes,"Sanjeevani Swasthya Bima Yojana (pre-merger UTs)"
+"Delhi",25,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Goa",73.1,2019-21,NFHS-5 Table 11.15,Yes,"Deen Dayal Swasthya Seva Yojana"
+"Gujarat",44.4,2019-21,NFHS-5 Table 11.15,Yes,"Mukhyamantri Amrutam Yojana"
+"Haryana",25.7,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Himachal Pradesh",38.9,2019-21,NFHS-5 Table 11.15,Yes,"Mukhya Mantri State Health Care Scheme / HIMCARE"
+"Jammu & Kashmir",13.8,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Jharkhand",50.3,2019-21,NFHS-5 Table 11.15,Yes,"Mukhya Mantri Swasthya Bima Yojana"
+"Karnataka",31.8,2019-21,NFHS-5 Table 11.15,Yes,"Ayushman Bharat–Aarogya Karnataka (including legacy state schemes)"
+"Kerala",57.8,2019-21,NFHS-5 Table 11.15,Yes,"Comprehensive Health Insurance Scheme (CHIS/CHIS Plus)"
+"Lakshadweep",67.7,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Ladakh",17.1,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Madhya Pradesh",38.1,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Maharashtra",22.4,2019-21,NFHS-5 Table 11.15,Yes,"Mahatma Jyotiba Phule Jan Arogya Yojana"
+"Manipur",16.4,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Meghalaya",69,2019-21,NFHS-5 Table 11.15,Yes,"Megha Health Insurance Scheme"
+"Mizoram",50.3,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Nagaland",22,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Odisha",47.9,2019-21,NFHS-5 Table 11.15,Yes,"Biju Swasthya Kalyan Yojana"
+"Puducherry",30.1,2019-21,NFHS-5 Table 11.15,Yes,"Puducherry Medical Relief Society Scheme"
+"Punjab",25.2,2019-21,NFHS-5 Table 11.15,Yes,"Bhagat Puran Singh Health Insurance Scheme"
+"Rajasthan",87.8,2019-21,NFHS-5 Table 11.15,Yes,"Bhamashah Swasthya Bima Yojana"
+"Sikkim",28,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Tamil Nadu",66.5,2019-21,NFHS-5 Table 11.15,Yes,"Chief Minister’s Comprehensive Health Insurance Scheme"
+"Telangana",69.2,2019-21,NFHS-5 Table 11.15,Yes,"Aarogyasri"
+"Tripura",36.4,2019-21,NFHS-5 Table 11.15,Not documented,"RSBY/PM-JAY listed; central programme, not coded as a state-funded scheme"
+"Uttar Pradesh",15.9,2019-21,NFHS-5 Table 11.15,Not documented,"No state-specific scheme listed in the reviewed inventory; this is not proof that no scheme existed"
+"Uttarakhand",62.5,2019-21,NFHS-5 Table 11.15,Yes,"Mukhya Mantri Swasthya Bima Yojana"
+"West Bengal",33.7,2019-21,NFHS-5 Table 11.15,Yes,"Swasthya Sathi"
