@@ -214,74 +214,37 @@ Compare healthcare infrastructure, expenditure and selected health indicators ac
 
 ## ## 10. Data Visualisation and Exploratory Analysis
 
-Data visualisation will be used to identify patterns, compare regional disparities and communicate insights related to healthcare accessibility and affordability across India.
+The following figures are generated from the committed National Health Accounts dataset covering 2013–14 to 2023–24. They are national-level descriptive charts, not state-level comparisons.
 
-The project will incorporate statistical charts, comparative visualisations and geographical representations to examine healthcare infrastructure, expenditure patterns and socioeconomic inequalities.
+### 10.1 Government and out-of-pocket expenditure
 
-### 10.1 Healthcare Expenditure Analysis
+![Government and out-of-pocket shares of total health expenditure](Visualisations/01_financing_shares.svg)
 
-- Bar charts comparing healthcare expenditure across Indian states.
-- Stacked bar charts illustrating government and out-of-pocket healthcare expenditure.
-- Line charts examining changes in healthcare expenditure over time.
-- Comparative visualisations of public and private healthcare financing.
+The chart tracks the shares of total health expenditure financed by government and paid directly by households. The latest observation is 2023–24.
 
-### 10.2 Healthcare Infrastructure Analysis
+### 10.2 Total health expenditure as a percentage of GDP
 
-- Bar charts comparing the availability of Primary Health Centres (PHCs) and Community Health Centres (CHCs).
-- Doctor-to-population ratio comparisons across states.
-- Rural and urban healthcare infrastructure comparisons.
-- Distribution of healthcare facilities across geographical regions.
+![Total health expenditure as a share of GDP](Visualisations/02_total_health_expenditure_gdp.svg)
 
-### 10.3 Healthcare Affordability Analysis
+**Comparability note:** the National Health Accounts report uses GDP on the 2011–12 base through 2021–22 and GDP on the 2022–23 base for 2022–23 and 2023–24. The series break is noted in the chart and should be considered when interpreting changes.
 
-- Comparison of out-of-pocket expenditure across states.
-- Analysis of household healthcare expenditure.
-- Comparison of public healthcare financing and household financial burden.
-- Visualisation of regional disparities in healthcare affordability.
+### 10.3 Per-capita total health expenditure
 
-### 10.4 Healthcare Outcomes Analysis
+![Per-capita total health expenditure at current prices](Visualisations/03_per_capita_expenditure.svg)
 
-- State-wise comparison of infant mortality rates.
-- Maternal health indicator comparisons.
-- Scatter plots examining healthcare infrastructure and health outcomes.
-- Correlation heatmaps of healthcare and socioeconomic indicators.
+Values are reported at current prices and are not adjusted for inflation. An increase in nominal per-capita expenditure therefore does not, by itself, establish an increase in real healthcare resources or affordability.
 
-### 10.5 Statistical Visualisation Techniques
+### 10.4 Social security and private health insurance
 
-The following techniques will be applied:
+![Social security and private health insurance shares](Visualisations/04_social_security_private_insurance.svg)
 
-- Bar Charts
-- Line Charts
-- Histograms
-- Box Plots
-- Scatter Plots
-- Correlation Heatmaps
-- Geographic Heatmaps
-- Choropleth Maps
+This figure compares the shares of total health expenditure attributed to social security health expenditure and private health insurance.
 
-### 10.6 Visualisation Tools
+**Source:** National Health Systems Resource Centre (NHSRC), Ministry of Health and Family Welfare, *National Health Accounts Estimates for India 2023–24*, Tables 1 and 3. [Official report (PDF)](https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf).
 
-| Library / Tool | Application |
-|---|---|
-| Matplotlib | Charts and statistical graphs |
-| Seaborn | Statistical visualisations and heatmaps |
-| Plotly | Interactive charts and dashboards |
-| GeoPandas | Geographical data analysis |
-| Folium | Interactive healthcare accessibility maps |
+**Scope:** the latest National Health Accounts observation used here is 2023–24. These figures must not be described as 2024–25 data. The charts are descriptive and do not establish causal relationships.
 
-### 10.7 Visualisation Gallery
 
-The repository will include a visualisation gallery containing the final charts and analytical outputs.
-
-| Visualisation | Objective |
-|---|---|
-| Healthcare Expenditure by State | Compare regional spending |
-| Government vs Out-of-Pocket Expenditure | Examine healthcare financing |
-| Healthcare Infrastructure Distribution | Identify infrastructure disparities |
-| Doctor-to-Population Ratio | Examine healthcare workforce availability |
-| Rural vs Urban Healthcare Access | Identify accessibility gaps |
-| Healthcare Outcomes Heatmap | Compare selected health indicators |
-| Healthcare Expenditure Correlation Matrix | Examine relationships between economic variables |
 ## 11. Tools and Technologies
 
 | Technology | Application |
