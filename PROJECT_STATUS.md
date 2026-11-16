@@ -1,44 +1,35 @@
-# Project status — Version 1.0
+# Project status — Version 2 analytical expansion
 
-**Status:** Version 1.0 research project complete  
-**Last validation:** 16 November 2026  
-**Validation:** GitHub Actions run succeeded; all five notebooks executed successfully.
+**Status:** Analytical expansion committed; final GitHub Actions validation pending.  
+**Evidence cut-off:** 16 November 2026.
 
-## Completed deliverables
+## Version 2 changes
 
-- Research framework, questions and conceptual model.
-- National NHA dataset for 2013–14 to 2023–24 with data dictionary.
-- State/UT health expenditure share dataset for 2024–25 Revised Estimates.
-- State/UT infant mortality dataset for 2023.
-- State/UT government hospital and bed dataset from RBI Handbook Table 17.
-- Derived 31-observation expenditure–IMR matched dataset.
-- Five Jupyter notebooks covering national financing, state expenditure, health outcomes, hospital infrastructure and exploratory correlation/regression.
-- Eight committed SVG visualisations.
-- Main GitHub README with embedded visualisations.
-- Full written research report.
-- CSV/notebook syntax validation script and GitHub Actions workflow.
+- Consolidated the repository to one canonical `Notebooks/` directory containing six ordered notebooks.
+- Removed the duplicate notebook tree under `Dataset/Notebooks/`.
+- Removed the malformed nested file `README.mdREADME.mdREADME.md`.
+- Added a state/UT dataset for rural PHC doctors in position, sanctioned positions and reported requirements for 2023, sourced from RBI Handbook Table 16.
+- Added a data dictionary that preserves missing source markers as missing and documents the staffing-coverage ratio.
+- Added Notebook 06 to match 2023 rural PHC staffing with 2023 infant mortality, report Pearson and Spearman associations, and document interpretation limits.
+- Expanded the written research report with the new analysis and its limitations.
+- Rewrote the README to distinguish questions answered by current evidence from questions that remain unanswered.
+- Removed unused packages from `requirements.txt` and simplified the CI installation process.
+- Expanded project validation to check the new dataset, matched sample, analytical coefficients, notebook count and absence of the duplicate directory.
 
-## Reproducibility result
+## New empirical result
 
-The GitHub Actions workflow:
-1. Installs the project dependencies.
-2. Validates CSV structure and key analytical checks.
-3. Parses all notebooks for Python syntax.
-4. Executes all five notebooks.
+For 34 matched states/UTs with a positive reported rural PHC doctor requirement:
+- Median in-position-to-required ratio: 1.38.
+- 10 of 34 observations were below the reported requirement.
+- Pearson correlation with 2023 IMR: -0.538 (p = 0.0010).
+- Spearman correlation with 2023 IMR: -0.562 (p = 0.0005).
 
-Latest successful run: https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43877464216
+These are bivariate cross-sectional associations, not causal effects. The ratio is not a population-adjusted doctor density and does not measure actual access or service quality.
 
-## Research scope and limitations
+## Scope boundaries
 
-Version 1.0 is a completed exploratory secondary-data project. It does not claim to be a complete causal evaluation of healthcare access or household affordability.
+The repository does not currently measure household catastrophic health expenditure, impoverishment due to medical spending, rural–urban utilisation gaps, or adjusted socioeconomic determinants. National OOPE shares are financing aggregates, not household-level incidence measures. Government hospital/bed counts are absolute counts from a source table that does not state a distinct observation year.
 
-The current evidence includes national OOPE financing shares, state budget shares, infant mortality and government hospital/bed counts. It does not yet include a comparable state-level panel of catastrophic health expenditure, household-level medical spending, facility utilisation, private-sector capacity or population-adjusted workforce/bed coverage. The RBI hospital/bed table does not specify a distinct observation year; its counts are not labelled as 2024–25.
+## Reproducibility
 
-## Optional Version 2 extensions
-
-These would deepen the project but are not required for the Version 1.0 deliverable:
-- Add household survey measures of medical spending and catastrophic health expenditure.
-- Add state-level health workforce indicators from RBI Table 16 / Health Dynamics of India.
-- Add population-adjusted bed and workforce indicators after harmonising reference years.
-- Build a multi-year state panel with income, education, sanitation, nutrition and health-system controls.
-- Estimate panel models only after confirming consistent definitions and adequate time coverage.
+The GitHub Actions workflow validates CSV structure and analytical checks, compiles notebook code cells, and executes all six notebooks. The Version 2 workflow run is currently queued; this status will be updated after it completes.
