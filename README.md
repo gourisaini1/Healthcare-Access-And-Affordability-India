@@ -99,7 +99,7 @@ The indicator is the percentage of households with at least one usual member cov
 
 ![NSS 75th-round average medical expenditure per hospitalisation](Visualisations/13_nss75_hospital_medical_expenditure_by_state.svg)
 
-Table A17 reports average medical expenditure during hospital stay per case, excluding childbirth. The all-hospital rural+urban estimate ranges from ₹4,754 in Arunachal Pradesh to ₹54,870 in Chandigarh. The table also provides rural/urban and public/private splits. These values are **gross medical expenditure**, not net out-of-pocket expenditure after reimbursements; the project does not label them as net OOPE. NSS microdata access requires a portal login, so a state-level net reimbursement-adjusted estimate is not calculated here. See [Notebook 10](Notebooks/10_State_Hospitalisation_Expenditure_NSS75.ipynb) and the [data dictionary](Dataset/NSS75_HOSPITALISATION_EXPENDITURE_DATA_DICTIONARY.md).
+Table A17 reports average medical expenditure during hospital stay per case, excluding childbirth. The all-hospital rural+urban estimate ranges from ₹4,754 in Arunachal Pradesh to ₹54,870 in Chandigarh. The table also provides rural/urban and public/private splits. These values are **gross medical expenditure**, not net out-of-pocket expenditure after reimbursements; the project does not label them as net OOPE. [NSS microdata access requires a portal login](https://microdata.gov.in/nada/index.php/catalog/152), so a state-level net reimbursement-adjusted estimate is not calculated here. See [Notebook 10](Notebooks/10_State_Hospitalisation_Expenditure_NSS75.ipynb) and the [data dictionary](Dataset/NSS75_HOSPITALISATION_EXPENDITURE_DATA_DICTIONARY.md).
 
 #### Government hospital beds per 1,000 population
 
