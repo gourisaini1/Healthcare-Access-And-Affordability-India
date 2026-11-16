@@ -47,7 +47,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Notebooks/*.ipynb
           if ! git diff --cached --quiet; then
-            git commit -m "Save executed notebook outputs"
+            git commit -m "Save executed notebook outputs [skip ci]"
             git push
           else
             echo "Notebook outputs are already up to date."
