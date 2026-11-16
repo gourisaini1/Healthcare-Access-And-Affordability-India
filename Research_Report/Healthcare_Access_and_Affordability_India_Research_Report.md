@@ -170,4 +170,4 @@ The next empirical extension should add household-level medical expenditure data
 
 ## 8. Reproducibility
 
-The repository contains six canonical Jupyter notebooks, source CSVs, data dictionaries, visualisations, a research report and a GitHub Actions workflow. The workflow validates source files, checks notebook syntax and executes all notebooks.
+The repository contains eight canonical Jupyter notebooks, source CSVs, data dictionaries, visualisations, a research report and a GitHub Actions workflow. The workflow validates source files, checks notebook syntax and executes all notebooks; executed notebooks and generated SVG visualisations are committed on pushes to main. Pull-request runs do not attempt to push. The output commit uses a CI-skip marker to prevent recursive workflow runs.
