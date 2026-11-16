@@ -25,7 +25,8 @@ This project examines India's health-financing mix, state public-health budgets,
 | How does rural PHC staffing compare with reported requirements? | RBI rural PHC doctors, 2023 | Descriptive |
 | Is staffing associated with infant mortality? | 2023 staffing and SRS IMR, 34 matched states/UTs | Bivariate association |
 | Does the association persist after socioeconomic controls? | 2021–22 per-capita NSDP and NFHS-5 female literacy, 32 complete cases | Exploratory adjusted association |
-| How does household insurance coverage vary across states/UTs? | NFHS-5, percentage of households with any usual member covered | Descriptive coverage proxy |
+| How does household insurance coverage vary across states/UTs? | NFHS-5 coverage and a non-exhaustive state-scheme inventory | Descriptive coverage and group comparison |
+| How does average hospitalisation expenditure vary by state/UT? | NSS 75th Round Table A17, 2017–18; gross expenditure by hospital type and sector | Descriptive spending measure; not net OOPE |
 | How does government bed availability vary by population? | NHP-2023 bed counts and projected population | Descriptive |
 | What is household catastrophic health expenditure by state? | Not measured in current data | Not answered |
 
@@ -86,13 +87,13 @@ The preferred model uses the natural log of the staffing ratio, with controls fo
 
 The 50-doctor threshold is a sensitivity check, not a formal statistical cutoff. Leave-one-out rows show the endpoints of the full one-state-at-a-time analysis. Linear and log coefficients have different units.
 
-### 5. State-level household financial protection proxy and government hospital beds
+### 5. State-level insurance coverage, hospitalisation expenditure and government beds
 
 #### NFHS-5 household health insurance/financing coverage, 2019–21
 
 ![NFHS-5 household health insurance coverage](Visualisations/12_nfhs5_household_health_insurance_coverage.svg)
 
-The indicator is the percentage of households with at least one usual member covered by any health insurance or financing scheme. The coverage–NSDP correlation is close to zero (Pearson r = **0.052**, p = **0.776**, n = 33). One plausible explanation is that the survey indicator captures scheme reach, which can be shaped by state programme design as well as income. In a non-exhaustive published scheme inventory, 22 states/UTs with a documented state-specific scheme have mean coverage of **50.8%** (median 53.5%), compared with **29.0%** (median 25.4%) among 14 not documented as having one. This is a descriptive group difference, not evidence that state schemes cause higher coverage or matter more than income. The inventory is not exhaustive; `Not documented` does not mean no scheme existed. The national report gives A&N 1.8%, while its Phase-I fact sheet gives 1.6%; 1.8% is retained for consistency with Table 11.15. See [Notebook 09](Notebooks/09_State_Health_Insurance_Coverage.ipynb) and the [data dictionary](Dataset/HEALTH_INSURANCE_COVERAGE_DATA_DICTIONARY.md).
+The indicator is the percentage of households with at least one usual member covered by any health insurance or financing scheme. The coverage–NSDP correlation is close to zero (Pearson r = **0.052**, p = **0.776**, n = 33). One plausible explanation is that the survey indicator captures scheme reach, which can be shaped by state programme design as well as income. In a non-exhaustive published scheme inventory, 22 states/UTs with a documented state-specific scheme have mean coverage of **50.8%** (median 53.5%), compared with **29.0%** (median 25.4%) among 14 not documented as having one. This is a descriptive group difference, not evidence that state schemes cause higher coverage or matter more than income. Maharashtra is an important counterexample: it had MJPJAY in the inventory but reported coverage was only 22.4%, showing that scheme presence alone does not guarantee broad household enrolment. Programme eligibility, implementation and take-up may matter. The inventory is not exhaustive; `Not documented` does not mean no scheme existed. The national report gives A&N 1.8%, while its Phase-I fact sheet gives 1.6%; 1.8% is retained for consistency with Table 11.15. See [Notebook 09](Notebooks/09_State_Health_Insurance_Coverage.ipynb) and the [data dictionary](Dataset/HEALTH_INSURANCE_COVERAGE_DATA_DICTIONARY.md).
 
 #### NSS 75th-round average medical expenditure per hospitalisation, 2017–18
 
