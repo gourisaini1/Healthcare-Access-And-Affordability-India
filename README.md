@@ -147,7 +147,7 @@ GitHub Actions validates datasets, checks notebook syntax and executes all noteb
 
 **Version 3 exploratory extension.** Eight notebooks now cover national financing, state budgets, rural PHC staffing, an exploratory adjusted regression and population-adjusted government hospital beds. Notebook execution and output saving are validated through GitHub Actions; the latest run status is linked below.
 
-[View GitHub Actions](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions)
+[Latest successful validation and notebook execution](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43886896461) · [All GitHub Actions runs](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions)
 
 ---
 **Author:** Gouri Saini | **Field:** Economics / Health Economics
