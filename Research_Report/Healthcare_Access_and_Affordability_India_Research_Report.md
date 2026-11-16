@@ -1,5 +1,5 @@
 # Healthcare Access and Affordability in India
-## Research report
+## Research report — Version 2 analytical expansion
 
 **Author:** Gouri Saini  
 **Discipline:** Economics / Health Economics  
@@ -9,127 +9,143 @@
 
 ## Executive summary
 
-This project examines healthcare financing, state-level public health budget priorities, selected health outcomes and public healthcare infrastructure in India. It combines national National Health Accounts (NHA) time-series indicators with state/UT data from the Reserve Bank of India (RBI) and the Sample Registration System (SRS).
+This project studies national health-financing patterns and state-level differences in public health budgets, rural primary-care staffing and infant mortality. Version 2 adds a same-reference-year comparison of rural Primary Health Centre (PHC) doctor staffing and infant mortality using Reserve Bank of India (RBI) tables for 2023. It also consolidates the repository around one canonical notebook sequence and narrows the stated research scope to what the available data can support.
 
-The central finding from the national NHA series is that the out-of-pocket expenditure (OOPE) share of total health expenditure declined from 64.2% in 2013–14 to 42.7% in 2023–24, while the government health expenditure share rose from 28.6% to 43.5%. These figures describe the composition of health financing; they do not on their own establish how much financial hardship households experience or whether access improved equally across states.
+The national National Health Accounts (NHA) series shows that the out-of-pocket expenditure (OOPE) share of total health expenditure declined from 64.2% in 2013–14 to 42.7% in 2023–24, while the government health expenditure share increased from 28.6% to 43.5%. This represents a shift in the financing mix, but does not reveal which households still face catastrophic medical spending.
 
-For state comparisons, RBI Statement 27 reports 2024–25 Revised Estimates (RE) of expenditure on Medical and Public Health and Family Welfare as a share of aggregate state expenditure. Among the 31 states/UTs in the dataset, the unweighted mean is 6.1% and the median is 5.9%. Delhi has the highest reported share (12.3%) and Punjab the lowest (3.0%). This is a budget-composition indicator, not per-capita expenditure or health-system performance.
+Across 31 states/UTs, the 2024–25 Revised Estimate (RE) for Medical and Public Health and Family Welfare averaged 6.1% of aggregate expenditure (median 5.9%). This measure captures budget composition, not per-capita spending or service delivery.
 
-The project also examines state-wise infant mortality in 2023 and government hospital/bed counts reproduced in RBI's 2024–25 Handbook. The RBI hospital table does not state a distinct observation year, so it is not labelled as 2024–25 data.
+The new rural workforce dataset reports doctors in position at rural PHCs relative to the source-reported requirement. Among 34 matched states/UTs with a positive requirement, 10 were below the reported requirement and 24 were at or above it. The median ratio was 1.38. Across these 34 observations, the Pearson correlation between staffing coverage and 2023 infant mortality was −0.538; the Spearman rank correlation was −0.562. These are cross-sectional associations, not causal effects. They may reflect broader differences in income, maternal education, nutrition, sanitation, fertility, transport, health infrastructure and public administration.
 
-An exploratory correlation between the 2024–25 RE health budget share and 2023 infant mortality across 31 matched states/UTs is 0.044 (Pearson). This is close to zero for this particular pair of measures. It is not a causal estimate and should not be interpreted as evidence that public spending is ineffective: the years differ, the budget share is not per-capita spending, and the analysis does not control for socioeconomic or demographic factors.
+The project does not claim to have measured household catastrophic health expenditure, rural–urban utilisation gaps or adjusted socioeconomic determinants. Those questions require additional household and comparable panel data.
 
-## 1. Research question and motivation
+## 1. Research questions and scope
 
-Healthcare access and affordability are important dimensions of economic welfare. High direct payments at the point of service can expose households to financial risk, while geographic and institutional inequalities can constrain access even when aggregate health expenditure increases.
+The empirical questions addressed in this report are:
 
-The project asks:
+1. How has India's national health-financing mix changed from 2013–14 to 2023–24?
+2. How do state/UT public health budget shares vary in 2024–25 Revised Estimates?
+3. How does rural PHC doctor staffing compare with the staffing requirement reported by RBI for 2023?
+4. Is rural PHC doctor staffing coverage associated with infant mortality in 2023?
+5. What descriptive information is available on state/UT government hospital and bed counts?
 
-1. How has India's healthcare financing mix changed over time?
-2. How do states/UTs differ in the share of aggregate expenditure allocated to Medical and Public Health and Family Welfare?
-3. How do selected health outcomes, particularly infant mortality, vary across states?
-4. What can available public hospital and bed counts tell us about the distribution of public infrastructure?
-5. Is the state health-budget share associated with infant mortality in a simple cross-sectional comparison?
+The following questions are recognised as important but are **not answered by the current evidence**: the household incidence of catastrophic health expenditure; differences in rural and urban healthcare utilisation and affordability; and the independent contribution of socioeconomic variables to health outcomes.
 
 ## 2. Data and sources
 
-| Dataset | Reference period | Source | Use |
+| Dataset | Period | Source | Analytical use |
 |---|---|---|---|
-| National health financing indicators | 2013–14 to 2023–24 | NHSRC / Ministry of Health and Family Welfare, National Health Accounts | National financing trends |
-| State health expenditure share | 2023–24 and 2024–25 RE | RBI, State Finances: A Study of Budgets 2025–26, Statement 27 | State budget composition |
-| Infant mortality rate | Calendar year 2023 | SRS, reproduced in RBI Handbook of Statistics on Indian States 2024–25, Table 4 | Health outcome comparison |
-| Government hospitals and beds | Reference year not specified in RBI table | National Health Profile, reproduced in RBI Handbook 2024–25, Table 17 | Public infrastructure description |
+| National health financing indicators | FY2013–14 to FY2023–24 | NHSRC / MoHFW, National Health Accounts | National financing trends |
+| State public health expenditure share | FY2023–24 and FY2024–25 RE | RBI, State Finances 2025–26, Statement 27 | Budget composition |
+| Infant mortality rate | Calendar 2023 | SRS, reproduced in RBI Handbook 2024–25, Table 4 | State health outcome |
+| Rural PHC doctor staffing | Calendar 2023 | RBI Handbook 2024–25, Table 16 | Staffing relative to reported requirement |
+| Government hospitals and beds | Observation year not specified in RBI table | RBI Handbook 2024–25, Table 17 | Infrastructure description |
 
-The data files and definitions are stored in the `Dataset/` directory. Source links and detailed field notes are included in the data dictionaries.
+Official source links:
+- [NHSRC National Health Accounts](https://nhsrcindia.org/national-health-accounts-records)
+- [RBI State Finances 2025–26, Statement 27](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23736)
+- [RBI Handbook Table 4: State-wise IMR](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23453)
+- [RBI Handbook Table 16: Doctors and Specialists](https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23465)
+- [RBI Handbook Table 17: Government Hospitals and Beds](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23466)
 
 ## 3. Methodology
 
-The analysis uses:
-- Descriptive time-series comparisons for national NHA indicators.
-- State/UT ranking and summary statistics for 2024–25 RE health expenditure shares.
-- State/UT comparisons of infant mortality and public hospital/bed counts.
-- A simple Pearson correlation between the 2024–25 RE expenditure share and 2023 infant mortality.
+The project uses descriptive time-series analysis, state/UT comparisons, a derived staffing ratio and bivariate correlation.
 
-The correlation is calculated only after matching state/UT labels. The matched sample contains 31 observations. The all-India IMR aggregate is excluded. The combined Dadra & Nagar Haveli and Daman & Diu observation is not treated as two independent observations.
+### 3.1 National financing trend
+
+The NHA series is analysed using levels and percentage-point changes in the government and OOPE shares of total health expenditure. Per-capita expenditure is reported at current prices and is not interpreted as real growth.
+
+### 3.2 State budget comparison
+
+The state expenditure measure is Medical and Public Health and Family Welfare expenditure as a percentage of aggregate expenditure. The 2024–25 figures are Revised Estimates, not audited actuals. State fiscal structures and denominators differ, so the indicator is interpreted as budget composition.
+
+### 3.3 Rural PHC staffing ratio
+
+For each state/UT with a positive required staffing count:
+
+`PHC staffing coverage = Doctors in position / Required rural PHC doctors`
+
+- A ratio below 1 means the reported in-position count is below the reported requirement.
+- A ratio equal to 1 means the reported requirement is met.
+- A ratio above 1 means the in-position count exceeds the reported requirement.
+
+The ratio is not capped at 1.0. Values above 1 may occur in the source data and are retained. The source's asterisk and dash markers are stored as missing, not zero. The Chandigarh row has no positive rural PHC requirement and is excluded from ratio analysis.
+
+### 3.4 Association with infant mortality
+
+The staffing ratio is joined to 2023 infant mortality by harmonised state/UT labels. The analysis reports Pearson's correlation (linear association) and Spearman's rank correlation. No causal interpretation is made and no multivariable controls are included.
 
 ## 4. Findings
 
-### 4.1 National healthcare financing
+### 4.1 National health financing
 
 | Indicator | 2013–14 | 2023–24 | Change |
 |---|---:|---:|---:|
 | Government health expenditure share | 28.6% | 43.5% | +14.9 percentage points |
-| Out-of-pocket expenditure share | 64.2% | 42.7% | −21.5 percentage points |
+| OOPE share | 64.2% | 42.7% | −21.5 percentage points |
 
-The financing mix shifted toward a larger government share and a smaller direct household payment share over the period. OOPE nevertheless remained a substantial component of total health expenditure in 2023–24.
+The composition of health financing shifted toward a larger government share and a smaller direct household payment share. However, OOPE still represented 42.7% of total health expenditure in 2023–24. Aggregate OOPE does not reveal the incidence or severity of household-level financial distress.
 
-The per-capita NHA series is reported at current prices. It is not adjusted for inflation and should not be described as real growth without an appropriate deflator.
+### 4.2 State public health budget shares
 
-### 4.2 State health expenditure shares, 2024–25 RE
+For the 31 states/UTs included in the RBI Statement 27 dataset, the unweighted mean of the 2024–25 RE share was 6.1% and the median was 5.9%. NCT Delhi recorded 12.3% and Punjab 3.0%.
 
-Across the 31 observations in the state dataset:
-- Mean: 6.1%.
-- Median: 5.9%.
-- Highest: NCT Delhi, 12.3%.
-- Lowest: Punjab, 3.0%.
+This is a share of aggregate expenditure. It is not an absolute rupee amount, expenditure per resident, expenditure as a share of GSDP, or an outcome measure. It should not be used alone to rank the quality of state health systems.
 
-The indicator is Medical and Public Health and Family Welfare expenditure as a percentage of aggregate expenditure. State fiscal structures and the size of the expenditure denominator differ. It is not an absolute spending measure, a per-capita measure, or a measure of service quality.
+### 4.3 Rural PHC doctor staffing
 
-### 4.3 Infant mortality
+The 2023 RBI Table 16 data cover 36 state/UT rows. After matching to the 2023 IMR dataset and excluding observations without a positive required staffing denominator, 34 state/UTs have a calculable staffing ratio.
 
-The 2023 SRS-based table records substantial state variation. In the dataset, Kerala's IMR is 5 deaths per 1,000 live births, while Chhattisgarh, Madhya Pradesh and Uttar Pradesh each record 37. IMR is shaped by multiple determinants, including maternal health, nutrition, sanitation, education, income and access to timely care.
+- Median in-position-to-required ratio: **1.38**.
+- Below the reported requirement: **10 of 34**.
+- At or above the reported requirement: **24 of 34**.
 
-### 4.4 Public hospital infrastructure
+The lowest ratio in the matched sample is Odisha (916 doctors in position against 1,277 required; ratio 0.72). The highest is Goa (97 in position against 21 required; ratio 4.62). These values are relative to the administrative requirement in the source, not a population-based benchmark. A high ratio does not necessarily indicate equitable geographic distribution or effective service delivery.
 
-The RBI table reports state/UT counts of government hospitals and beds, including rural/urban splits where available. These are absolute counts. A larger absolute bed count does not necessarily mean better availability relative to population, and the source table does not identify a distinct observation year. The current project therefore does not claim to have produced a definitive beds-per-capita comparison.
+### 4.4 Rural PHC staffing and infant mortality
 
-### 4.5 Exploratory expenditure–IMR association
+Across the 34 matched state/UT observations:
 
-The Pearson correlation between 2024–25 RE health expenditure share and 2023 IMR is 0.044 across 31 matched observations.
+| Statistic | Estimate | Interpretation |
+|---|---:|---|
+| Pearson correlation | −0.538 | Moderate negative linear association in this sample |
+| Pearson p-value | 0.0010 | Evidence against zero bivariate linear correlation under the test assumptions |
+| Spearman correlation | −0.562 | Negative rank association |
+| Spearman p-value | 0.0005 | Evidence against zero rank association under the test assumptions |
+| Observations | 34 | States/UTs with a positive requirement and matched IMR |
 
-This near-zero linear correlation applies only to these two variables, this sample and these mismatched reference periods. It does not estimate the causal impact of government expenditure on health outcomes. A more credible econometric design would require multiple years of comparable state-level data and controls such as per-capita income, maternal education, sanitation, nutrition, urbanisation, fertility, workforce availability and health infrastructure.
+The negative association means that states/UTs with higher rural PHC doctor staffing relative to the reported requirement tended to have lower infant mortality in this sample. Statistical significance does not establish causality. The relationship may be confounded by socioeconomic conditions, maternal and child health programmes, nutrition, sanitation, transport, fertility, broader health infrastructure and state capacity. Small-state observations may also be more volatile.
 
-## 5. Interpretation for health economics and public policy
+This result is stronger than the earlier comparison between 2024–25 RE budget shares and 2023 IMR because the workforce and outcome variables share the same reference year and the staffing measure is closer to service availability. It is still a bivariate cross-sectional association, not an evaluation of the impact of hiring additional doctors.
 
-The national NHA trend is consistent with a shift in the financing composition toward government expenditure and away from direct household payments. However, the persistence of a substantial OOPE share indicates that financial protection remains an important subject for further analysis.
+### 4.5 Government hospitals and beds
 
-State budget shares can reveal differences in fiscal priorities, but they must be interpreted alongside state income, population, fiscal capacity, actual expenditure and delivery outcomes. Budget allocations do not automatically translate into accessible or high-quality services.
+The RBI Table 17 data provide state/UT absolute counts of government hospitals and beds, including rural/urban splits where reported. The table does not specify a distinct observation year. Therefore, this project does not label the counts as 2024–25 data and does not calculate population-adjusted access from them. Absolute counts are affected by state population size and cannot by themselves indicate adequacy.
 
-The state variation in IMR highlights the importance of considering broader social determinants alongside healthcare resources. The exploratory correlation does not provide evidence for a simple one-variable relationship between budget shares and infant mortality.
+## 5. Economic interpretation
+
+The national NHA series documents a shift in the financing mix, but the persistence of OOPE makes financial protection an important research priority. State budget shares provide information about fiscal priorities but not actual service delivery or household affordability.
+
+The new workforce analysis suggests that rural PHC doctor staffing relative to administrative requirements is associated with infant mortality across states/UTs. This is consistent with the proposition that primary-care capacity matters for health outcomes, but the design cannot isolate the contribution of staffing from broader social and institutional conditions.
+
+A policy interpretation should therefore avoid single-indicator rankings. Better evidence would combine financial protection, population-adjusted capacity, workforce distribution, service utilisation and social determinants.
 
 ## 6. Limitations
 
-1. The datasets do not all refer to the same year. In particular, 2024–25 RE expenditure is compared with 2023 IMR.
-2. Revised Estimates are not final audited accounts.
-3. Health expenditure as a percentage of aggregate expenditure is not expenditure per person or as a percentage of GSDP.
-4. The hospital/bed table does not specify a distinct observation year.
-5. Hospital/bed counts are absolute and not adjusted for population.
-6. The current analysis does not include state-level private infrastructure, facility utilisation, quality, waiting time or travel distance.
-7. The analysis is based on secondary administrative and survey data, each with its own coverage and reporting limitations.
-8. The correlation is descriptive and does not control for confounding variables or establish causality.
-9. The national NHA per-capita expenditure series is at current prices and is not inflation-adjusted.
+1. NHA financing indicators are national aggregates and do not show household-level distribution.
+2. The 2024–25 state health expenditure values are Revised Estimates.
+3. The budget share is not expenditure per capita or as a share of GSDP.
+4. The PHC staffing ratio uses administrative required staffing as its denominator, not population.
+5. Rural PHC doctors represent only one part of the health workforce and exclude private providers, urban facilities and other cadres.
+6. The staffing–IMR analysis is cross-sectional and bivariate; omitted-variable bias is likely.
+7. The hospital/bed table does not state a distinct observation year; counts are absolute, not population-adjusted.
+8. The project does not yet include household catastrophic expenditure or impoverishment measures.
 
 ## 7. Further research
 
-The next empirical extension should:
-- Add population projections matched to the hospital/bed observation period and label them as projections.
-- Calculate indicative beds per 1,000 projected population only when the reference-year mismatch is clearly disclosed.
-- Extract and analyse the RBI Table 16 doctors and specialists data, preserving each year and facility type.
-- Add state-level socioeconomic controls and use a multi-year panel if comparable observations can be assembled.
-- Expand affordability analysis with household survey data on medical expenditure, consumption and catastrophic health spending.
+The next empirical extension should add household-level medical expenditure data to calculate catastrophic health expenditure using explicit thresholds (for example, out-of-pocket health spending as a share of total household consumption or capacity to pay). A second extension should build a multi-year state panel of rural workforce, IMR, per-capita state income, maternal education, sanitation, nutrition and health expenditure. Fixed-effects models may then be considered if definitions, coverage and time periods are sufficiently consistent. Any causal claim would still require a defensible identification strategy.
 
-## 8. Conclusion
+## 8. Reproducibility
 
-The project documents changes in India's healthcare financing composition and differences across states in budgetary health expenditure, infant mortality and public hospital infrastructure. It demonstrates how public economic and health datasets can be combined for exploratory health economics research, while also showing why differences in definitions, coverage and reference periods matter.
-
-The evidence supports further investigation of state-level financial protection and service availability. It does not support causal claims about the effect of expenditure on health outcomes. A more rigorous panel analysis with population-adjusted resources and socioeconomic controls is the appropriate next step.
-
-## References
-
-1. National Health Systems Resource Centre, Ministry of Health and Family Welfare. *National Health Accounts Estimates for India 2023–24*. https://nhsrcindia.org/national-health-accounts-records
-2. Reserve Bank of India. *State Finances: A Study of Budgets of 2025–26*, Statement 27. https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23736
-3. Reserve Bank of India. *Handbook of Statistics on Indian States 2024–25*, Table 4: State-wise Infant Mortality Rate. https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23453
-4. Reserve Bank of India. *Handbook of Statistics on Indian States 2024–25*, Table 16: State-wise Health Infrastructure – Doctors and Specialists. https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23465
-5. Reserve Bank of India. *Handbook of Statistics on Indian States 2024–25*, Table 17: State-wise Number of Government Hospitals and Beds. https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23466
-6. Reserve Bank of India. *Handbook of Statistics on Indian States 2024–25*, Table 18: State-wise Public Expenditure on Health. https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23467
-7. Ministry of Health and Family Welfare / Central Bureau of Health Intelligence. *National Health Profile 2023*. https://cbhidghs.mohfw.gov.in/WriteReadData/l892s/Final_Central%20Bureau%20of%20Health%20Intelligene%20July%202024.pdf
+The repository contains six canonical Jupyter notebooks, source CSVs, data dictionaries, visualisations, a research report and a GitHub Actions workflow. The workflow validates source files, checks notebook syntax and executes all notebooks.
