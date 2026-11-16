@@ -1,391 +1,144 @@
-# Healthcare-Access-And-Affordability-India
-### Project Overview
-This project examines healthcare accessibility and affordability across India, focusing on regional disparities and socioeconomic differences.
-## 1. Introduction
+# Healthcare Access and Affordability in India
 
-Healthcare is a fundamental determinant of human development and economic well-being. Access to affordable and quality healthcare influences labour productivity, household financial stability, poverty reduction and overall economic growth.
+**An exploratory health-economics research project using official Indian public data**
 
-Despite improvements in India's healthcare infrastructure and public health financing, significant disparities persist in healthcare accessibility and affordability across geographical regions and socioeconomic groups.
+This repository examines three linked dimensions of India's health system: **how healthcare is financed nationally, how public health resources vary across states, and whether rural primary-care staffing is associated with infant mortality**. It combines National Health Accounts time series with state-level fiscal, workforce and health-outcome indicators.
 
-High out-of-pocket expenditure (OOPE), unequal distribution of healthcare facilities, differences in household income and variations in public healthcare infrastructure continue to influence healthcare utilisation and financial protection.
+> **Research boundary:** this is a secondary-data, descriptive and correlational study. It does not estimate causal effects. National out-of-pocket expenditure (OOPE) shares are used to describe the financing mix; they are not a direct household-level measure of catastrophic health expenditure.
 
-According to the National Health Accounts Estimates for India 2021-22, out-of-pocket expenditure accounted for 39.4% of total health expenditure, while government health expenditure accounted for 48.0%.
+## Key findings
 
-These indicators highlight the importance of examining healthcare financing, accessibility and affordability together rather than treating them as separate challenges.
+- India's OOPE share of total health expenditure fell from **64.2% in 2013–14 to 42.7% in 2023–24** (−21.5 percentage points). The government health expenditure share rose from **28.6% to 43.5%** (+14.9 percentage points). Source: National Health Accounts Estimates for India.
+- Across 31 states/UTs, the 2024–25 Revised Estimate for Medical and Public Health and Family Welfare averaged **6.1% of aggregate expenditure** (median 5.9%). This is a budget-composition measure, not spending per person or health-system performance.
+- In the 2023 rural PHC staffing table, **10 of 34 matched states/UTs** with a calculable staffing ratio were below the reported doctor requirement; 24 were at or above it. The median in-position-to-required ratio was **1.38**.
+- Across 34 matched states/UTs, rural PHC doctor staffing coverage and 2023 infant mortality had a **Pearson correlation of −0.538** and **Spearman correlation of −0.562**. This is a meaningful descriptive association to investigate, not a causal estimate. It is not adjusted for income, maternal education, nutrition, sanitation, fertility, urbanisation or other confounders.
 
-This project investigates the economic and structural determinants of healthcare accessibility and affordability in India using secondary datasets, statistical analysis and data visualisation.
+## Research questions and evidence coverage
 
-## 2. Problem Statement
-
-Healthcare accessibility is not determined solely by the availability of medical facilities. The affordability of treatment, geographical proximity, availability of medical professionals and household purchasing power also influence an individual's ability to obtain healthcare services.
-
-In India, differences in healthcare infrastructure and household economic conditions can create unequal access to medical services.
-
-Furthermore, high out-of-pocket healthcare expenditure can expose households to financial hardship, particularly when medical treatment is unexpected or prolonged.
-
-This project seeks to examine these inequalities through an economic and data-driven framework, identifying regional disparities and exploring the relationship between healthcare infrastructure, expenditure and selected health outcomes.
-
-## 3. Research Objectives
-
-The primary objectives of this study are:
-
-- To analyse regional disparities in healthcare accessibility across Indian states.
-- To examine public and private healthcare expenditure patterns.
-- To evaluate the financial burden of healthcare expenditure on households.
-- To investigate differences in healthcare infrastructure between rural and urban regions.
-- To examine the relationship between healthcare infrastructure and selected health outcomes.
-- To identify socioeconomic factors associated with healthcare affordability.
-- To develop evidence-based policy recommendations for improving healthcare accessibility and financial protection.
-
-## 4. Research Questions
-
-The study aims to investigate the following questions:
-
-1. How does healthcare accessibility vary across Indian states?
-2. What are the regional differences in healthcare infrastructure and availability of medical professionals?
-3. How significant is out-of-pocket expenditure in India's healthcare financing system?
-4. How do rural and urban populations differ in healthcare accessibility?
-5. Is greater public healthcare infrastructure associated with improved health outcomes?
-6. What socioeconomic factors influence household healthcare affordability?
-7. What policy interventions could help reduce regional inequalities and financial barriers to healthcare?
-
-## 5. Conceptual Framework
-
-The study examines healthcare accessibility and affordability through four interconnected dimensions.
-
-### 5.1 Healthcare Availability
-
-Measures the availability and distribution of healthcare infrastructure, including:
-
-- Primary Health Centres (PHCs).
-- Community Health Centres (CHCs).
-- Sub-Centres.
-- District hospitals.
-- Doctors and other healthcare professionals.
-
-### 5.2 Healthcare Affordability
-
-Examines the financial capacity of households to access medical services through:
-
-- Out-of-pocket expenditure.
-- Household healthcare expenditure.
-- Government health expenditure.
-- Health insurance coverage.
-- Public healthcare financing.
-
-### 5.3 Socioeconomic Inequality
-
-Investigates how economic and demographic characteristics influence healthcare accessibility, including:
-
-- Household income and economic status.
-- Rural and urban population distribution.
-- Regional economic disparities.
-- Educational attainment.
-- Population density.
-
-### 5.4 Healthcare Outcomes
-
-Examines selected health indicators to understand differences in population health across regions.
-
-Potential indicators include:
-
-- Infant mortality rate.
-- Maternal mortality ratio.
-- Life expectancy.
-- Institutional delivery rates.
-- Selected maternal and child health indicators.
-
-## 6. Data Sources
-
-The analysis uses publicly available secondary datasets from government institutions and international organisations.
-
-| Data Source | Dataset / Information | Application |
+| Research question | Evidence in this repository | Status |
 |---|---|---|
-| National Family Health Survey (NFHS) | NFHS-5 (2019-21) | Household characteristics, health indicators and healthcare utilisation |
-| National Health Accounts (NHA) | National Health Accounts Estimates | Healthcare financing and out-of-pocket expenditure |
-| Rural Health Statistics (RHS) | Rural Health Statistics reports | Healthcare infrastructure and human resources |
-| Ministry of Health and Family Welfare | Health statistics and administrative reports | Healthcare infrastructure and policy data |
-| World Bank Open Data | Health and socioeconomic indicators | Economic and demographic comparisons |
+| How has India's healthcare financing mix changed? | NHA national time series, 2013–14 to 2023–24 | Answered descriptively |
+| How do states differ in public health budget priority? | RBI state expenditure shares, 2023–24 and 2024–25 RE | Answered descriptively |
+| How does rural PHC doctor staffing compare with the stated requirement? | RBI Table 16, 2023 | Answered descriptively |
+| Is rural PHC doctor staffing associated with infant mortality? | Same-year 2023 staffing and SRS IMR, 34 matched states/UTs | Explored statistically |
+| How do government hospital and bed counts vary? | RBI Table 17 absolute counts | Described, with observation-year limitation |
+| What is the household incidence of catastrophic health expenditure? | Not measured by the current NHA aggregate series | Not answered; requires household microdata |
+| How do rural and urban households differ in utilisation and affordability? | Not measured in the current state aggregates | Not answered; requires household/facility-level data |
+| Which socioeconomic factors explain state differences? | Not estimated in a multivariable model | Not answered; requires a harmonised state panel |
 
-### Official Data Sources
+The repository deliberately distinguishes answered questions from questions requiring data that are not currently available in a comparable form. It does not present planned analysis as completed evidence.
 
-- [National Family Health Survey](https://rchiips.org/nfhs/)
-- [National Health Accounts, India](https://nhsrcindia.org/national-health-accounts-records)
-- [Rural Health Statistics, 2021-22](https://www.mohfw.gov.in/sites/default/files/RHS%202021-22.pdf)
-- [Ministry of Health and Family Welfare](https://mohfw.gov.in/)
-- [World Bank Open Data](https://data.worldbank.org/)
+## Conceptual framework
 
-## 7. Key Variables and Indicators
+`Healthcare financing` affects the resources available to providers and the extent of financial risk borne by households. `Health-system capacity` (including rural PHC staffing) is one channel through which resources may translate into service availability. Population health outcomes such as infant mortality are also shaped by wider social determinants, including nutrition, sanitation, maternal education, income and transport.
 
-The following variables will be considered for the analysis.
+This framework motivates the empirical comparisons but does not imply that the available data identify each causal pathway.
 
-| Category | Variables |
-|---|---|
-| Healthcare Expenditure | Total Health Expenditure, Government Health Expenditure, Out-of-Pocket Expenditure |
-| Healthcare Infrastructure | Number of PHCs, CHCs, Sub-Centres and hospitals |
-| Healthcare Workforce | Doctors, nurses and other medical professionals |
-| Healthcare Accessibility | Facility availability and population coverage |
-| Healthcare Outcomes | Infant mortality, maternal health and life expectancy |
-| Socioeconomic Indicators | GDP per capita, literacy, population density and rural-urban distribution |
+## Data sources
 
-All variables will be assessed for consistency, availability, geographical coverage and comparability before being included in the final analysis.
+| Dataset | Period / unit | Source and role |
+|---|---|---|
+| National Health Accounts indicators | India, FY2013–14 to FY2023–24 | NHSRC / MoHFW; financing mix and OOPE |
+| State public health expenditure share | 31 states/UTs, FY2023–24 and FY2024–25 RE | RBI *State Finances: A Study of Budgets 2025–26*, Statement 27 |
+| Infant mortality rate | State/UT, calendar 2023 | SRS, reproduced in RBI *Handbook of Statistics on Indian States 2024–25*, Table 4 |
+| Rural PHC doctor staffing | State/UT, calendar 2023 | RBI *Handbook of Statistics on Indian States 2024–25*, Table 16 |
+| Government hospitals and beds | State/UT; source observation year not specified in RBI table | RBI *Handbook of Statistics on Indian States 2024–25*, Table 17 |
 
-## 8. Research Methodology
+Official references:
+- [National Health Accounts, NHSRC](https://nhsrcindia.org/national-health-accounts-records)
+- [RBI State Finances 2025–26, Statement 27](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23736)
+- [RBI Handbook Table 4: Infant Mortality Rate](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23453)
+- [RBI Handbook Table 16: Doctors and Specialists](https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23465)
+- [RBI Handbook Table 17: Government Hospitals and Beds](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23466)
 
-The project follows a quantitative research methodology combining descriptive statistics, exploratory data analysis and economic interpretation.
+## Analysis and visualisations
 
-### 8.1 Data Collection
+### 1. National healthcare financing, 2013–14 to 2023–24
 
-- Collect secondary datasets from government and international databases.
-- Identify relevant state-level, district-level and national indicators.
-- Examine the reporting periods and definitions of individual variables.
-- Document the original sources and data collection methodology.
+![Government and out-of-pocket shares](Visualisations/01_financing_shares.svg)
 
-### 8.2 Data Cleaning and Preprocessing
+The OOPE share declined while the government share increased. The NHA figures describe the source of health financing, not the distribution of financial hardship across households.
 
-- Identify and handle missing observations.
-- Remove duplicate records.
-- Standardise state and district classifications.
-- Convert variables into consistent numerical formats.
-- Check for outliers and inconsistencies.
-- Merge datasets using appropriate geographical and temporal identifiers.
+### 2. State public health expenditure share, 2024–25 RE
 
-### 8.3 Exploratory Data Analysis (EDA)
+![State public health expenditure share](Visualisations/05_state_health_expenditure_share_2024_25_RE.svg)
 
-Conduct exploratory analysis to identify patterns and variations in healthcare accessibility and expenditure.
+The variable is Medical and Public Health and Family Welfare expenditure as a percentage of aggregate state expenditure. Revised Estimates are not audited actuals. The percentage does not show absolute rupees, per-capita expenditure, expenditure as a share of GSDP or service quality.
 
-The analysis will include:
+### 3. State infant mortality rate, 2023
 
-- State-wise comparison of healthcare infrastructure.
-- Distribution of healthcare expenditure.
-- Comparison of rural and urban healthcare indicators.
-- Examination of regional disparities.
-- Analysis of healthcare workforce availability.
+![State infant mortality rate](Visualisations/06_state_infant_mortality_rate_2023.svg)
 
-### 8.4 Descriptive Statistical Analysis
+IMR is infant deaths per 1,000 live births. It is influenced by health services and broader social determinants.
 
-Apply statistical measures such as:
+### 4. Rural PHC doctor staffing and infant mortality, 2023
 
-- Mean and median.
-- Standard deviation.
-- Minimum and maximum values.
-- Percentiles.
-- Correlation coefficients.
+Notebook 06 constructs a staffing coverage ratio:
 
-These measures will help understand the distribution and variation of healthcare indicators across regions.
+`In-position rural PHC doctors / required rural PHC doctors`
 
-### 8.5 Comparative Analysis
+A ratio below 1 indicates fewer doctors in position than the reported requirement; a ratio above 1 indicates staffing above that requirement. This is an administrative staffing ratio, not doctors per capita or proof that services are accessible.
 
-Conduct comparative analysis across Indian states and Union Territories to identify differences in healthcare availability, expenditure and selected health outcomes.
+The analysis uses 34 state/UT observations with a positive reported requirement and matched IMR. Pearson and Spearman coefficients are reported in the notebook. The negative association is consistent with states having higher staffing coverage tending to have lower IMR in this sample, but it cannot isolate the effect of staffing from other state differences.
 
-Where comparable data is available, rural and urban healthcare indicators will also be examined separately.
+### 5. Government hospitals and beds
 
-### 8.6 Economic Interpretation
+![Government hospital beds](Visualisations/07_state_government_hospital_beds.svg)
 
-Interpret the findings using concepts from:
+These are absolute counts. The RBI table does not state a distinct observation year, so the figures are not labelled as 2024–25 observations and are not interpreted as population-adjusted access.
 
-- Health Economics.
-- Public Economics.
-- Development Economics.
-- Welfare Economics.
-- Socioeconomic Inequality.
-
-The analysis will distinguish between observed associations and causal relationships.
-
-## 9. Analytical Framework
-
-The project will investigate the following relationships:
-
-**A. Healthcare Infrastructure and Health Outcomes**
-
-Examine whether regions with greater availability of healthcare facilities and medical professionals also demonstrate better health indicators.
-
-**B. Healthcare Expenditure and Financial Protection**
-
-Analyse the relationship between government healthcare expenditure and out-of-pocket expenditure.
-
-**C. Socioeconomic Conditions and Healthcare Accessibility**
-
-Examine how income levels, population distribution and regional economic conditions relate to healthcare access.
-
-**D. Regional Healthcare Inequality**
-
-Compare healthcare infrastructure, expenditure and selected health indicators across states to identify disparities.
-
-## 10. Data Visualisation and Exploratory Analysis
-
-The following figures are generated from the committed National Health Accounts dataset covering 2013–14 to 2023–24. They are national-level descriptive charts, not state-level comparisons.
-
-### 10.1 Government and out-of-pocket expenditure
-
-![Government and out-of-pocket shares of total health expenditure](Visualisations/01_financing_shares.svg)
-
-The chart tracks the shares of total health expenditure financed by government and paid directly by households. The latest observation is 2023–24.
-
-### 10.2 Total health expenditure as a percentage of GDP
-
-![Total health expenditure as a share of GDP](Visualisations/02_total_health_expenditure_gdp.svg)
-
-**Comparability note:** the National Health Accounts report uses GDP on the 2011–12 base through 2021–22 and GDP on the 2022–23 base for 2022–23 and 2023–24. The series break is noted in the chart and should be considered when interpreting changes.
-
-### 10.3 Per-capita total health expenditure
-
-![Per-capita total health expenditure at current prices](Visualisations/03_per_capita_expenditure.svg)
-
-Values are reported at current prices and are not adjusted for inflation. An increase in nominal per-capita expenditure therefore does not, by itself, establish an increase in real healthcare resources or affordability.
-
-### 10.4 Social security and private health insurance
-
-![Social security and private health insurance shares](Visualisations/04_social_security_private_insurance.svg)
-
-This figure compares the shares of total health expenditure attributed to social security health expenditure and private health insurance.
-
-**Source:** National Health Systems Resource Centre (NHSRC), Ministry of Health and Family Welfare, *National Health Accounts Estimates for India 2023–24*, Tables 1 and 3. [Official report (PDF)](https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf).
-
-**Scope:** the latest National Health Accounts observation used here is 2023–24. These figures must not be described as 2024–25 data. The charts are descriptive and do not establish causal relationships.
-
-
-## 11. State-wise public health expenditure (2024–25 RE)
-
-The Reserve Bank of India publishes state/UT-level expenditure on Medical and Public Health and Family Welfare as a percentage of aggregate expenditure. The 2024–25 values are **Revised Estimates (RE)**, not final audited accounts.
-
-![State-wise public health expenditure share, 2024–25 revised estimates](Visualisations/05_state_health_expenditure_share_2024_25_RE.svg)
-
-The chart compares the proportion of each state's/UT's aggregate expenditure allocated to these health-related functions. It is a measure of budget composition—not absolute rupee spending, spending per person, healthcare access, service quality, or health outcomes. State fiscal structures and aggregate expenditure denominators differ, so the percentages should not be interpreted as a direct ranking of healthcare performance.
-
-The underlying data are in [state_health_expenditure_share_rbi_2024_25_re.csv](Dataset/state_health_expenditure_share_rbi_2024_25_re.csv), with definitions and caveats in [the data dictionary](Dataset/STATE_HEALTH_EXPENDITURE_DATA_DICTIONARY.md). The analysis notebook is [02_State_Health_Expenditure_Analysis.ipynb](Notebooks/02_State_Health_Expenditure_Analysis.ipynb).
-
-**Source:** Reserve Bank of India, *State Finances: A Study of Budgets of 2025–26*, Statement 27, “Expenditure on Medical and Public Health and Family Welfare — As per cent of Aggregate Expenditure”, published 23 January 2026. [Official RBI table](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23736).
-
-## 12. State-wise health outcomes: infant mortality (2023)
-
-The Reserve Bank of India's *Handbook of Statistics on Indian States 2024–25*, Table 4, reports state/UT infant mortality rates for 2023, sourced from the Sample Registration System.
-
-![State-wise infant mortality rate, 2023](Visualisations/06_state_infant_mortality_rate_2023.svg)
-
-IMR is measured as infant deaths per 1,000 live births. The 2023 data are the latest observation in this particular table; they are not 2024–25 data. The combined Dadra & Nagar Haveli observation includes Daman & Diu and is not separately plotted. The all-India aggregate is excluded from the state comparison.
-
-Files: [IMR dataset](Dataset/state_infant_mortality_rate_2023.csv), [data dictionary](Dataset/IMR_DATA_DICTIONARY.md), [analysis notebook](Notebooks/03_Health_Outcomes_and_Expenditure.ipynb).
-
-### Exploratory comparison with public health expenditure
-
-The notebook joins 2023 IMR to 2024–25 Revised Estimates of health expenditure share from RBI Statement 27. These are different reference periods. The scatter plot is descriptive and must not be interpreted as evidence that expenditure caused the observed IMR differences. The budget indicator is a share of aggregate expenditure, not per-capita spending or expenditure as a percentage of GSDP.
-
-**Sources:** RBI, [Handbook of Statistics on Indian States 2024–25, Table 4](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23453); RBI, [State Finances: A Study of Budgets of 2025–26, Statement 27](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23736).
-
-## 13. State-wise government hospital infrastructure
-
-The RBI *Handbook of Statistics on Indian States 2024–25*, Table 17, reproduces state/UT counts of government hospitals and beds from the National Health Profile. The RBI table does not state a distinct observation year for these counts. The edition year must not be mistaken for the data reference year.
-
-![Government hospital beds by state and UT](Visualisations/07_state_government_hospital_beds.svg)
-
-The chart presents absolute bed counts, not beds per capita. Larger states will generally have larger totals, so the chart should not be read as a ranking of access or adequacy. The dataset also includes rural/urban splits where reported.
-
-Files: [hospital and beds dataset](Dataset/state_government_hospitals_and_beds_rbi_handbook_2024_25.csv), [data dictionary](Dataset/HOSPITALS_BEDS_DATA_DICTIONARY.md), [analysis notebook](Notebooks/04_State_Hospital_Infrastructure_Analysis.ipynb).
-
-**Source:** RBI, [Handbook of Statistics on Indian States 2024–25, Table 17](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23466). The source notes that government hospitals include central, state and local government bodies, and that Delhi and Chandigarh have no rural area.
-
-## 14. Exploratory statistical relationship: expenditure share and infant mortality
-
-The project combines 31 state/UT observations for an exploratory cross-sectional comparison. The health expenditure variable is the 2024–25 Revised Estimate of Medical and Public Health and Family Welfare expenditure as a percentage of aggregate expenditure. The health outcome variable is the 2023 infant mortality rate (infant deaths per 1,000 live births).
-
-![Exploratory scatter plot of health expenditure share and infant mortality](Visualisations/08_health_spending_vs_imr_scatter.svg)
-
-The Pearson correlation in this matched sample is **0.044** (31 observations), indicating almost no linear association between these two specific measures in this sample. This should not be interpreted as evidence that health expenditure has no effect on health outcomes. The spending measure is a budget share, not expenditure per person or actual service delivery; the two indicators refer to different periods; and the analysis does not control for income, nutrition, sanitation, maternal education, urbanisation, workforce availability or other confounding factors.
-
-Files: [matched analysis dataset](Dataset/state_health_spending_imr_matched_exploratory.csv), [correlation and regression notebook](Notebooks/05_Correlation_and_Regression_Analysis.ipynb).
-
-**Interpretation:** this is an exploratory association, not a causal estimate or policy-effect evaluation. A stronger analysis requires comparable-year panel data and appropriate socioeconomic controls.
-
-## Project status
-
-**Version 1.0 is complete.** All five notebooks have passed automated execution in GitHub Actions, and the data-validation and notebook-syntax checks passed on the latest successful run.
-
-See [PROJECT_STATUS.md](PROJECT_STATUS.md) for the deliverables, validation record and optional Version 2 research extensions. [View successful validation run](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43877464216).
-
-## 15. Research report and reproducibility
-
-The full research report, including the research questions, data sources, methods, findings, interpretation, limitations and references, is available here:
-
-[Read the research report](Research_Report/Healthcare_Access_and_Affordability_India_Research_Report.md).
-
-The repository includes a lightweight validation script at `scripts/validate_project.py` and a GitHub Actions workflow at `.github/workflows/validate.yml`. The workflow is configured to validate CSVs, parse notebooks and execute the notebooks on pushes and pull requests. A configured workflow is not proof that a run has passed; check the repository's Actions tab for the latest run status.
-
-## 16. Tools and Technologies
-
-| Technology | Application |
-|---|---|
-| Python | Statistical computing and data analysis |
-| Pandas | Data manipulation and preprocessing |
-| NumPy | Numerical calculations |
-| Matplotlib | Data visualisation |
-| Seaborn | Statistical visualisation |
-| Statsmodels | Statistical analysis |
-| Jupyter Notebook | Interactive analysis and documentation |
-| GitHub | Project documentation and version control |
-
-## 17. Expected Research Contributions
-
-The project aims to provide:
-
-- A comparative assessment of healthcare accessibility across Indian states.
-- Insights into the structure of healthcare financing in India.
-- An examination of regional differences in healthcare infrastructure.
-- An understanding of socioeconomic barriers to healthcare affordability.
-- Evidence-based recommendations for strengthening healthcare access and financial protection.
-
-## 18. Limitations of the Study
-
-The study acknowledges the following limitations:
-
-- The availability and reporting periods of healthcare datasets may vary.
-- Differences in survey methodology may affect comparability across datasets.
-- State-level indicators may conceal district-level inequalities.
-- Administrative data may not fully capture actual healthcare utilisation or quality.
-- Correlation between healthcare expenditure and health outcomes does not establish causation.
-- The study relies on secondary data and is subject to the limitations of the original data sources.
-
-## 19. Repository Structure
+## Repository structure
 
 ```text
-Healthcare-Access-And-Affordability-India/
-├── .github/workflows/validate.yml
+.
 ├── Dataset/
-│   ├── national_health_accounts_india_2013_14_to_2023_24.csv
-│   ├── state_health_expenditure_share_rbi_2024_25_re.csv
-│   ├── state_infant_mortality_rate_2023.csv
-│   ├── state_government_hospitals_and_beds_rbi_handbook_2024_25.csv
-│   ├── state_health_spending_imr_matched_exploratory.csv
-│   └── data dictionaries and README.md
+│   ├── *.csv
+│   ├── *_DATA_DICTIONARY.md
+│   └── README.md
 ├── Notebooks/
 │   ├── 01_National_Health_Accounts_Analysis.ipynb
 │   ├── 02_State_Health_Expenditure_Analysis.ipynb
 │   ├── 03_Health_Outcomes_and_Expenditure.ipynb
 │   ├── 04_State_Hospital_Infrastructure_Analysis.ipynb
-│   └── 05_Correlation_and_Regression_Analysis.ipynb
-├── Visualisations/
-│   ├── 01–08 chart files (.svg)
-│   └── README.md
+│   ├── 05_Correlation_and_Regression_Analysis.ipynb
+│   └── 06_Rural_Workforce_and_Health_Outcomes.ipynb
 ├── Research_Report/
-│   ├── Healthcare_Access_and_Affordability_India_Research_Report.md
-│   └── README.md
-├── scripts/validate_project.py
-├── requirements.txt
-└── README.md
+├── Visualisations/
+├── scripts/
+└── .github/workflows/
 ```
 
-## 20. References
+There is one canonical notebook directory. The duplicate notebook tree formerly stored under `Dataset/Notebooks/` and a malformed nested README file have been removed.
 
-1. Ministry of Health and Family Welfare, Government of India. National Health Accounts Estimates for India 2023-24.
-2. Ministry of Health and Family Welfare, Government of India. Rural Health Statistics 2021-22.
-3. International Institute for Population Sciences (IIPS) and Ministry of Health and Family Welfare. National Family Health Survey (NFHS-5), 2019-21.
-4. World Bank. World Development Indicators.
-5. National Health Systems Resource Centre (NHSRC). National Health Accounts.
+## Reproduce the analysis
 
-## 21. Author
+Python 3.11 is recommended.
 
-**Gouri Saini**
+```bash
+git clone https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India.git
+cd Healthcare-Access-And-Affordability-India
+python -m venv .venv
+# Activate the environment, then:
+pip install -r requirements.txt
+cd Notebooks
+jupyter lab
+```
 
-Economics Graduate | Healthcare Economics | Data Analytics | Economic Research
+Run notebooks 01–06 in order. Notebooks read source datasets from `../Dataset/`.
+
+The GitHub Actions workflow validates the CSVs, checks notebook syntax and executes all notebooks on pushes and pull requests.
+
+## Limitations and next research steps
+
+1. **Household affordability:** NHA OOPE shares are national aggregates. Catastrophic expenditure, impoverishment due to medical spending and distribution by consumption quintile require household-level NSS/NFHS-compatible data.
+2. **Rural–urban access:** the PHC staffing table is rural-specific, but the current project does not contain a comparable urban provider dataset or household utilisation data.
+3. **Socioeconomic controls:** the workforce–IMR analysis is bivariate. A state panel with income, education, sanitation, nutrition and demographic controls is needed before estimating adjusted relationships.
+4. **Population adjustment:** absolute hospital/bed counts are not per-capita measures. A compatible population denominator and observation year are required.
+5. **Causal inference:** a causal evaluation would require a defensible identification strategy, not simply a larger regression.
+
+## Project status
+
+**Version 2 analytical expansion in progress.** The repository now has a consolidated notebook structure, a new same-year rural workforce analysis and tighter research-question scope. CI validation is used to check reproducibility; the final status will be updated after the expanded workflow passes.
 
 ---
+**Author:** Gouri Saini | **Field:** Economics / Health Economics
