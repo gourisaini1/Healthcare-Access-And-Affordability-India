@@ -90,6 +90,8 @@ The restricted complete-case sensitivity sample with at least 50 required PHC do
 
 The numerator is government hospital beds in NHP-2023 Table 6.2.2, dated 31 December 2022. The denominator is projected population from NHP-2023 Table 1.1.2(d), as of 1 March 2021. The approximately 21-month gap is disclosed. The indicator covers government beds only, not private beds, occupancy, staffing, geographic access or quality.
 
+**Maharashtra source check:** NHP-2023 Table 6.2.2 reports 10,920 rural beds and 16,417 urban beds (27,337 total). With the NHP projected population of 124,437 thousand, this is **0.2197 government beds per 1,000 residents**, second-lowest among the 36 state/UT rows (only Bihar is lower), and below Uttar Pradesh (0.3445). The table's notes contain no Maharashtra-specific footnote or adjustment; they define government hospitals as central, state and local government bodies and note that Delhi and Chandigarh have no rural area. The published figure is retained and flagged as an unusual source-reported result, not silently corrected.
+
 **Source-table consistency caveat:** the 36 state/UT bed rows sum to 880,307, while the NHP India aggregate row reports 840,455. The 39,852 difference equals the Andhra Pradesh row. State-level rates use the published state rows; no national rate is calculated from these inconsistent totals.
 
 ## Repository structure
