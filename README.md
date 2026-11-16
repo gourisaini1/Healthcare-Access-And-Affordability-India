@@ -257,7 +257,23 @@ The underlying data are in [state_health_expenditure_share_rbi_2024_25_re.csv](D
 
 **Source:** Reserve Bank of India, *State Finances: A Study of Budgets of 2025–26*, Statement 27, “Expenditure on Medical and Public Health and Family Welfare — As per cent of Aggregate Expenditure”, published 23 January 2026. [Official RBI table](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23736).
 
-## 12. Tools and Technologies
+## 12. State-wise health outcomes: infant mortality (2023)
+
+The Reserve Bank of India's *Handbook of Statistics on Indian States 2024–25*, Table 4, reports state/UT infant mortality rates for 2023, sourced from the Sample Registration System.
+
+![State-wise infant mortality rate, 2023](Visualisations/06_state_infant_mortality_rate_2023.svg)
+
+IMR is measured as infant deaths per 1,000 live births. The 2023 data are the latest observation in this particular table; they are not 2024–25 data. The combined Dadra & Nagar Haveli observation includes Daman & Diu and is not separately plotted. The all-India aggregate is excluded from the state comparison.
+
+Files: [IMR dataset](Dataset/state_infant_mortality_rate_2023.csv), [data dictionary](Dataset/IMR_DATA_DICTIONARY.md), [analysis notebook](Notebooks/03_Health_Outcomes_and_Expenditure.ipynb).
+
+### Exploratory comparison with public health expenditure
+
+The notebook joins 2023 IMR to 2024–25 Revised Estimates of health expenditure share from RBI Statement 27. These are different reference periods. The scatter plot is descriptive and must not be interpreted as evidence that expenditure caused the observed IMR differences. The budget indicator is a share of aggregate expenditure, not per-capita spending or expenditure as a percentage of GSDP.
+
+**Sources:** RBI, [Handbook of Statistics on Indian States 2024–25, Table 4](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23453); RBI, [State Finances: A Study of Budgets of 2025–26, Statement 27](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23736).
+
+## 13. Tools and Technologies
 
 | Technology | Application |
 |---|---|
@@ -270,7 +286,7 @@ The underlying data are in [state_health_expenditure_share_rbi_2024_25_re.csv](D
 | Jupyter Notebook | Interactive analysis and documentation |
 | GitHub | Project documentation and version control |
 
-## 13. Expected Research Contributions
+## 14. Expected Research Contributions
 
 The project aims to provide:
 
@@ -280,7 +296,7 @@ The project aims to provide:
 - An understanding of socioeconomic barriers to healthcare affordability.
 - Evidence-based recommendations for strengthening healthcare access and financial protection.
 
-## 14. Limitations of the Study
+## 15. Limitations of the Study
 
 The study acknowledges the following limitations:
 
@@ -291,7 +307,7 @@ The study acknowledges the following limitations:
 - Correlation between healthcare expenditure and health outcomes does not establish causation.
 - The study relies on secondary data and is subject to the limitations of the original data sources.
 
-## 15. Repository Structure
+## 16. Repository Structure
 
 ```text
 Healthcare-Access-and-Affordability-India/
@@ -315,7 +331,7 @@ Healthcare-Access-and-Affordability-India/
 └── requirements.txt
 ```
 
-## 16. References
+## 17. References
 
 1. Ministry of Health and Family Welfare, Government of India. National Health Accounts Estimates for India 2021-22.
 2. Ministry of Health and Family Welfare, Government of India. Rural Health Statistics 2021-22.
@@ -323,7 +339,7 @@ Healthcare-Access-and-Affordability-India/
 4. World Bank. World Development Indicators.
 5. National Health Systems Resource Centre (NHSRC). National Health Accounts.
 
-## 17. Author
+## 18. Author
 
 **Gouri Saini**
 
