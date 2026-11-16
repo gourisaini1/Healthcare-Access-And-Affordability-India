@@ -32,4 +32,4 @@ The repository does not currently measure household catastrophic health expendit
 
 ## Reproducibility
 
-The GitHub Actions workflow validates CSV structure and analytical checks, compiles notebook code cells, and executes all six notebooks. The Version 2 workflow run is currently queued; this status will be updated after it completes.
+The GitHub Actions workflow validates CSV structure and analytical checks, compiles notebook code cells, and executes all six notebooks. The prior Version 2 workflow passed. This follow-on revision is not yet complete: notebook outputs still need to be executed and committed, an adjusted socioeconomic regression remains to be built and validated, and population-adjusted hospital-bed measures require a compatible population denominator and observation year.
