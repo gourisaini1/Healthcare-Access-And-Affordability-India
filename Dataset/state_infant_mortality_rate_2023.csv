@@ -1,23 +1,38 @@
-state_ut,infant_mortality_rate_2023_per_1000_live_births,imr_reference_year,source
-Andhra Pradesh,19,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Assam,30,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Bihar,23,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Chhattisgarh,37,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-NCT Delhi,14,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Gujarat,20,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Haryana,26,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Himachal Pradesh,14,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Jammu and Kashmir,14,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Jharkhand,29,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Karnataka,14,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Kerala,5,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Madhya Pradesh,37,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Maharashtra,14,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Odisha,30,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Punjab,17,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Rajasthan,29,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Tamil Nadu,12,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Telangana,18,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Uttar Pradesh,37,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-Uttarakhand,20,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
-West Bengal,17,2023,Sample Registration System 2023 via Economic Survey 2025-26 Statistical Appendix Table 8.2
+state_ut,infant_mortality_rate_2023_per_1000_live_births,reference_year,notes
+Andaman & Nicobar Islands,9,2023,
+Andhra Pradesh,19,2023,
+Arunachal Pradesh,20,2023,
+Assam,30,2023,
+Bihar,23,2023,
+Chandigarh,7,2023,
+Chhattisgarh,37,2023,
+Dadra & Nagar Haveli (includes Daman & Diu),9,2023,Includes Daman and Diu in source series
+Daman & Diu,,2023,Not available separately for 2023
+Delhi,14,2023,
+Goa,6,2023,
+Gujarat,20,2023,
+Haryana,26,2023,
+Himachal Pradesh,14,2023,
+Jammu & Kashmir,14,2023,
+Jharkhand,29,2023,
+Karnataka,14,2023,
+Kerala,5,2023,
+Lakshadweep,9,2023,
+Madhya Pradesh,37,2023,
+Maharashtra,14,2023,
+Manipur,3,2023,
+Meghalaya,34,2023,
+Mizoram,13,2023,
+Nagaland,10,2023,
+Odisha,30,2023,
+Puducherry,7,2023,
+Punjab,17,2023,
+Rajasthan,29,2023,
+Sikkim,6,2023,
+Tamil Nadu,12,2023,
+Telangana,18,2023,
+Tripura,15,2023,
+Uttar Pradesh,37,2023,
+Uttarakhand,20,2023,
+West Bengal,17,2023,
+All India,25,2023,National aggregate, not a state/UT
