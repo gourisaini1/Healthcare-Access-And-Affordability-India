@@ -70,6 +70,14 @@ rho_staff, p_rho_staff = spearmanr(
     workforce.coverage_ratio,
     workforce.infant_mortality_rate_2023_per_1000_live_births,
 )
+socio_analysis = workforce.merge(socio, on="state_ut", how="left", validate="one_to_one")
+socio_analysis["log_nsdp"] = __import__("numpy").log(
+    pd.to_numeric(socio_analysis.per_capita_nsdp_2021_22_inr, errors="coerce")
+)
+adjusted_sample = socio_analysis.dropna(
+    subset=["female_literacy_nfhs5_pct", "log_nsdp"]
+)
+assert len(adjusted_sample) == 32, len(adjusted_sample)
 assert len(workforce) == 34
 assert abs(r_staff - (-0.5378)) < 0.002, r_staff
 assert abs(rho_staff - (-0.5624)) < 0.002, rho_staff
@@ -92,3 +100,4 @@ print(f"Rural PHC staffing vs IMR: n={len(workforce)}, Pearson r={r_staff:.4f}, 
 print(f"Rural PHC staffing vs IMR: Spearman rho={rho_staff:.4f}, p={p_rho_staff:.4f}")
 print(f"Socioeconomic covariates: {len(socio)} rows; NSDP non-missing={socio.per_capita_nsdp_2021_22_inr.notna().sum()}")
 print(f"Government beds per 1,000 population: {len(beds_pc)} state/UT rows")
+print(f"Adjusted complete-case model sample: {len(adjusted_sample)}; excluded: {sorted(set(workforce.state_ut) - set(adjusted_sample.state_ut))}")
