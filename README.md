@@ -132,7 +132,12 @@ Run notebooks **01–09 in numerical order**. Each notebook reads analysis-ready
 - [Dataset catalogue and data dictionaries](Dataset/README.md)
 - [Visualisation catalogue](Visualisations/README.md)
 - [Project status](PROJECT_STATUS.md)
+- [MIT licence and third-party data terms](LICENSE)
 - [GitHub Actions validation history](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions)
+
+## License
+
+Original code and documentation are released under the MIT License. Third-party datasets and source materials remain subject to their original publishers’ terms and reuse conditions; see [LICENSE](LICENSE).
 
 ---
 
