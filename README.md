@@ -297,7 +297,15 @@ Files: [matched analysis dataset](Dataset/state_health_spending_imr_matched_expl
 
 **Interpretation:** this is an exploratory association, not a causal estimate or policy-effect evaluation. A stronger analysis requires comparable-year panel data and appropriate socioeconomic controls.
 
-## 15. Tools and Technologies
+## 15. Research report and reproducibility
+
+The full research report, including the research questions, data sources, methods, findings, interpretation, limitations and references, is available here:
+
+[Read the research report](Research_Report/Healthcare_Access_and_Affordability_India_Research_Report.md).
+
+The repository includes a lightweight validation script at `scripts/validate_project.py` and a GitHub Actions workflow at `.github/workflows/validate.yml`. The workflow is configured to validate CSVs, parse notebooks and execute the notebooks on pushes and pull requests. A configured workflow is not proof that a run has passed; check the repository's Actions tab for the latest run status.
+
+## 16. Tools and Technologies
 
 | Technology | Application |
 |---|---|
@@ -310,7 +318,7 @@ Files: [matched analysis dataset](Dataset/state_health_spending_imr_matched_expl
 | Jupyter Notebook | Interactive analysis and documentation |
 | GitHub | Project documentation and version control |
 
-## 16. Expected Research Contributions
+## 17. Expected Research Contributions
 
 The project aims to provide:
 
@@ -320,7 +328,7 @@ The project aims to provide:
 - An understanding of socioeconomic barriers to healthcare affordability.
 - Evidence-based recommendations for strengthening healthcare access and financial protection.
 
-## 17. Limitations of the Study
+## 18. Limitations of the Study
 
 The study acknowledges the following limitations:
 
@@ -331,39 +339,44 @@ The study acknowledges the following limitations:
 - Correlation between healthcare expenditure and health outcomes does not establish causation.
 - The study relies on secondary data and is subject to the limitations of the original data sources.
 
-## 18. Repository Structure
+## 19. Repository Structure
 
 ```text
-Healthcare-Access-and-Affordability-India/
-│
+Healthcare-Access-And-Affordability-India/
+├── .github/workflows/validate.yml
 ├── Dataset/
-│   ├── Raw_Data/
-│   └── Processed_Data/
-│
+│   ├── national_health_accounts_india_2013_14_to_2023_24.csv
+│   ├── state_health_expenditure_share_rbi_2024_25_re.csv
+│   ├── state_infant_mortality_rate_2023.csv
+│   ├── state_government_hospitals_and_beds_rbi_handbook_2024_25.csv
+│   ├── state_health_spending_imr_matched_exploratory.csv
+│   └── data dictionaries and README.md
 ├── Notebooks/
-│   ├── 01_Data_Collection.ipynb
-│   ├── 02_Data_Cleaning.ipynb
-│   ├── 03_Exploratory_Data_Analysis.ipynb
-│   └── 04_Statistical_Analysis.ipynb
-│
+│   ├── 01_National_Health_Accounts_Analysis.ipynb
+│   ├── 02_State_Health_Expenditure_Analysis.ipynb
+│   ├── 03_Health_Outcomes_and_Expenditure.ipynb
+│   ├── 04_State_Hospital_Infrastructure_Analysis.ipynb
+│   └── 05_Correlation_and_Regression_Analysis.ipynb
 ├── Visualisations/
-│
+│   ├── 01–08 chart files (.svg)
+│   └── README.md
 ├── Research_Report/
-│
-├── README.md
-│
-└── requirements.txt
+│   ├── Healthcare_Access_and_Affordability_India_Research_Report.md
+│   └── README.md
+├── scripts/validate_project.py
+├── requirements.txt
+└── README.md
 ```
 
-## 19. References
+## 20. References
 
-1. Ministry of Health and Family Welfare, Government of India. National Health Accounts Estimates for India 2021-22.
+1. Ministry of Health and Family Welfare, Government of India. National Health Accounts Estimates for India 2023-24.
 2. Ministry of Health and Family Welfare, Government of India. Rural Health Statistics 2021-22.
 3. International Institute for Population Sciences (IIPS) and Ministry of Health and Family Welfare. National Family Health Survey (NFHS-5), 2019-21.
 4. World Bank. World Development Indicators.
 5. National Health Systems Resource Centre (NHSRC). National Health Accounts.
 
-## 20. Author
+## 21. Author
 
 **Gouri Saini**
 
