@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 import pandas as pd
-from scipy.stats import pearsonr
+from scipy.stats import pearsonr, spearmanr
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "Dataset"
@@ -12,6 +12,7 @@ spend = pd.read_csv(DATA / "state_health_expenditure_share_rbi_2024_25_re.csv")
 imr = pd.read_csv(DATA / "state_infant_mortality_rate_2023.csv")
 beds = pd.read_csv(DATA / "state_government_hospitals_and_beds_rbi_handbook_2024_25.csv")
 matched = pd.read_csv(DATA / "state_health_spending_imr_matched_exploratory.csv")
+staff = pd.read_csv(DATA / "state_rural_phc_doctors_2023.csv")
 
 assert len(nha) == 11 and nha.financial_year.is_monotonic_increasing
 assert nha.financial_year.iloc[-1] == "2023-24"
@@ -20,11 +21,54 @@ assert spend.health_expenditure_share_aggregate_2024_25_re_pct.between(0, 100).a
 assert imr.state_ut.is_unique
 assert beds.state_ut.is_unique
 assert len(matched) == 31
-r, p = pearsonr(matched.health_expenditure_share_2024_25_re_pct,
-                matched.infant_mortality_rate_2023_per_1000_live_births)
-assert abs(r - 0.0443) < 0.002, r
+assert staff.state_ut.is_unique and len(staff) == 36
+assert staff.reference_year.eq(2023).all()
+assert staff.required_rural_phc_doctors.ge(0).all()
 
-for path in NOTEBOOKS.glob("*.ipynb"):
+r_budget, p_budget = pearsonr(
+    matched.health_expenditure_share_2024_25_re_pct,
+    matched.infant_mortality_rate_2023_per_1000_live_births,
+)
+assert abs(r_budget - 0.0443) < 0.002, r_budget
+
+imr_states = imr.loc[~imr.state_ut.eq("All India")].dropna(
+    subset=["infant_mortality_rate_2023_per_1000_live_births"]
+).copy()
+staff = staff.copy()
+staff["state_key"] = staff.state_ut.replace({
+    "Dadra & Nagar Haveli & Daman & Diu":
+    "Dadra & Nagar Haveli (includes Daman & Diu)"
+})
+imr_states["state_key"] = imr_states.state_ut
+workforce = staff.merge(
+    imr_states[["state_key", "infant_mortality_rate_2023_per_1000_live_births"]],
+    on="state_key",
+    how="inner",
+    validate="one_to_one",
+)
+workforce["coverage_ratio"] = (
+    workforce.in_position_rural_phc_doctors
+    / workforce.required_rural_phc_doctors.where(
+        workforce.required_rural_phc_doctors > 0
+    )
+)
+workforce = workforce.dropna(subset=["coverage_ratio"])
+r_staff, p_staff = pearsonr(
+    workforce.coverage_ratio,
+    workforce.infant_mortality_rate_2023_per_1000_live_births,
+)
+rho_staff, p_rho_staff = spearmanr(
+    workforce.coverage_ratio,
+    workforce.infant_mortality_rate_2023_per_1000_live_births,
+)
+assert len(workforce) == 34
+assert abs(r_staff - (-0.5378)) < 0.002, r_staff
+assert abs(rho_staff - (-0.5624)) < 0.002, rho_staff
+
+notebooks = sorted(NOTEBOOKS.glob("*.ipynb"))
+assert len(notebooks) == 6, [p.name for p in notebooks]
+assert not (DATA / "Notebooks").exists(), "Duplicate notebook tree should not exist"
+for path in notebooks:
     with path.open(encoding="utf-8") as f:
         nb = json.load(f)
     assert nb.get("nbformat") == 4, path.name
@@ -32,7 +76,8 @@ for path in NOTEBOOKS.glob("*.ipynb"):
         if cell.get("cell_type") == "code":
             compile("".join(cell.get("source", [])), f"{path.name}:cell", "exec")
 
-print("CSV, notebook syntax and analytical checks passed.")
-print(f"NHA rows: {len(nha)}; state budget rows: {len(spend)}; matched state rows: {len(matched)}")
-print(f"Pearson r: {r:.4f}; p-value: {p:.4f}")
-print("Note: this static QA does not replace end-to-end notebook execution.")
+print("CSV, notebook syntax, duplicate-tree and analytical checks passed.")
+print(f"NHA rows: {len(nha)}; state budget rows: {len(spend)}; matched budget/IMR rows: {len(matched)}")
+print(f"Budget-share vs IMR: Pearson r={r_budget:.4f}, p={p_budget:.4f}")
+print(f"Rural PHC staffing vs IMR: n={len(workforce)}, Pearson r={r_staff:.4f}, p={p_staff:.4f}")
+print(f"Rural PHC staffing vs IMR: Spearman rho={rho_staff:.4f}, p={p_rho_staff:.4f}")
