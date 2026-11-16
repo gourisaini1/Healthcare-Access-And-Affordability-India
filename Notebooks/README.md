@@ -14,6 +14,7 @@ Run the notebooks from this directory in numerical order. Each notebook reads it
 | `06_Rural_Workforce_and_Health_Outcomes.ipynb` | How does rural PHC doctor staffing compare with reported requirements, and how does it relate to IMR? | Staffing coverage ratio, bivariate associations and small-denominator sensitivity |
 | `07_Adjusted_Workforce_IMR_Regression.ipynb` | Does the rural PHC staffing–IMR association persist after socioeconomic controls? | HC3-adjusted OLS, linear/log specifications, restricted-sample models, VIF and leave-one-out diagnostics |
 | `08_Government_Hospital_Beds_Per_Capita.ipynb` | How does government bed availability vary after population adjustment? | Beds per 1,000 projected population and source consistency checks |
+| `09_State_Health_Insurance_Coverage.ipynb` | How does household health insurance/financing coverage vary across states/UTs, and is it associated with per-capita NSDP? | NFHS-5 household coverage chart and descriptive Pearson/Spearman correlations |
 
 ## Notebook 07: model specification and sample
 
