@@ -4,7 +4,7 @@
 **Status:** Final consolidated research release  
 **Evidence cut-off:** 16 November 2026  
 **Canonical analysis:** Nine notebooks in `Notebooks/`  
-**Latest successful full validation:** [GitHub Actions run 43896918339](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43896918339)
+**Latest successful full validation:** [GitHub Actions run 43896918339](https://github.com/gourisaini1/Healthcare-Access-And-Affordability-India/actions/runs/43901880319)
 
 ## Final deliverables
 
