@@ -1,5 +1,5 @@
 # Healthcare Access and Affordability in India
-## Research report — Version 3 exploratory extension
+## Final research report
 
 **Author:** Gouri Saini  
 **Discipline:** Economics / Health Economics  
@@ -9,7 +9,7 @@
 
 ## Executive summary
 
-This project studies national health-financing patterns and state-level differences in public health budgets, rural primary-care staffing and infant mortality. Version 3 adds an exploratory multivariable model of rural PHC staffing and infant mortality, using NFHS-5 female literacy and RBI per-capita NSDP as socioeconomic controls. It also replaces the earlier undated RBI bed-count series for this question with dated National Health Profile (NHP) 2023 government bed counts and a projected population denominator.
+This project studies national health-financing patterns and state-level differences in public health budgets, rural primary-care staffing and infant mortality. The final consolidated analysis includes an exploratory multivariable model of rural PHC staffing and infant mortality, using NFHS-5 female literacy and RBI per-capita NSDP as socioeconomic controls. It also replaces the earlier undated RBI bed-count series for this question with dated National Health Profile (NHP) 2023 government bed counts and a projected population denominator.
 
 The national National Health Accounts (NHA) series shows that the out-of-pocket expenditure (OOPE) share of total health expenditure declined from 64.2% in 2013–14 to 42.7% in 2023–24, while the government health expenditure share increased from 28.6% to 43.5%. This represents a shift in the financing mix, but does not reveal which households still face catastrophic medical spending.
 
