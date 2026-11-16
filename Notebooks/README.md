@@ -55,4 +55,4 @@ cd Notebooks
 jupyter lab
 ```
 
-Open the notebooks in numerical order and run all cells. The automated GitHub Actions workflow performs dataset and notebook-syntax checks, executes all eight notebooks, and saves executed outputs and generated SVG figures to the main branch on successful pushes.
+Open the notebooks in numerical order and run all cells. The automated GitHub Actions workflow performs dataset and notebook-syntax checks, executes all nine notebooks, and saves executed outputs and generated SVG figures to the main branch on successful pushes.
