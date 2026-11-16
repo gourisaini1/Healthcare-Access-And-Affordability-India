@@ -96,7 +96,7 @@ The dependent variable is 2023 IMR (deaths per 1,000 live births). The principal
 
 ### 3.6 Household health insurance/financing coverage
 
-The state-level coverage measure is the percentage of households with at least one usual member covered by any health insurance or financing scheme, from NFHS-5 Table 11.15 (2019–21). It is interpreted as scheme reach, not as the adequacy of cover, successful claim payment, utilisation or a reduction in out-of-pocket spending. The correlation with nominal per-capita NSDP at current prices in FY2021–22 is calculated on the 33 state/UTs with a separate NSDP observation; missing NSDP values are not imputed.
+The state-level coverage measure is the percentage of households with at least one usual member covered by any health insurance or financing scheme, from NFHS-5 Table 11.15 (2019–21). It is interpreted as scheme reach, not as the adequacy of cover, successful claim payment, utilisation or a reduction in out-of-pocket spending. The correlation with nominal per-capita NSDP at current prices in FY2021–22 is calculated on the 33 state/UTs with a separate NSDP observation; missing NSDP values are not imputed. A separate binary inventory flag records whether a state-specific government health insurance scheme is listed in Table 1 of the 2023 published scheme review. The inventory is explicitly non-exhaustive; `Not documented` is therefore not coded or interpreted as proof that no scheme existed. Tripura's RSBY/PM-JAY entry is central and is not counted as a state-specific scheme. The group comparison is unweighted and descriptive; it does not measure programme spending, eligibility breadth or implementation intensity.
 
 ### 3.7 State-level hospitalisation medical expenditure
 
