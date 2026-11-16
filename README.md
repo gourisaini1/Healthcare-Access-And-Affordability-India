@@ -11,7 +11,7 @@ This repository examines three linked dimensions of India's health system: **how
 - India's OOPE share of total health expenditure fell from **64.2% in 2013–14 to 42.7% in 2023–24** (−21.5 percentage points). The government health expenditure share rose from **28.6% to 43.5%** (+14.9 percentage points). Source: National Health Accounts Estimates for India.
 - Across 31 states/UTs, the 2024–25 Revised Estimate for Medical and Public Health and Family Welfare averaged **6.1% of aggregate expenditure** (median 5.9%). This is a budget-composition measure, not spending per person or health-system performance.
 - In the 2023 rural PHC staffing table, **10 of 34 matched states/UTs** with a calculable staffing ratio were below the reported doctor requirement; 24 were at or above it. The median in-position-to-required ratio was **1.38**.
-- Across 34 matched states/UTs, rural PHC doctor staffing coverage and 2023 infant mortality had a **Pearson correlation of −0.538** and **Spearman correlation of −0.562**. This is a meaningful descriptive association to investigate, not a causal estimate. It is not adjusted for income, maternal education, nutrition, sanitation, fertility, urbanisation or other confounders.
+- Across 34 matched states/UTs, the PHC staffing ratio and 2023 infant mortality had a **Pearson correlation of −0.538** and **Spearman correlation of −0.562**. Restricting the sample to observations with at least 50 required PHC doctors (27 observations) gives Pearson r = **−0.498** and Spearman rho = **−0.368**. The association is descriptive, not causal; the rank relationship weakens in the restricted sample. Neither model is adjusted for socioeconomic confounders.
 
 ## Research questions and evidence coverage
 
@@ -73,11 +73,13 @@ IMR is infant deaths per 1,000 live births. It is influenced by health services 
 
 ### 4. Rural PHC doctor staffing and infant mortality, 2023
 
+![Rural PHC staffing ratio and infant mortality](Visualisations/09_rural_phc_staffing_vs_imr.svg)
+
 Notebook 06 constructs a staffing coverage ratio:
 
 `In-position rural PHC doctors / required rural PHC doctors`
 
-A ratio below 1 indicates fewer doctors in position than the reported requirement; a ratio above 1 indicates staffing above that requirement. This is an administrative staffing ratio, not doctors per capita or proof that services are accessible.
+A ratio below 1 indicates fewer doctors in position than the reported requirement; a ratio above 1 indicates staffing above that administrative benchmark. The source requirement is approximately one doctor per PHC, so a ratio of 2 means about twice the benchmark post count—not twice the doctors the population needs. Delhi's denominator is only 5 required doctors and Goa's is 21, which helps explain their high ratios (3.20 and 4.62). This is not doctors per capita or proof that services are accessible.
 
 The analysis uses 34 state/UT observations with a positive reported requirement and matched IMR. Pearson and Spearman coefficients are reported in the notebook. The negative association is consistent with states having higher staffing coverage tending to have lower IMR in this sample, but it cannot isolate the effect of staffing from other state differences.
 
