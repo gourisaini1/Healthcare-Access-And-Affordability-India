@@ -12,7 +12,7 @@ This project examines India's health-financing mix, state public-health budgets,
 3. **Rural PHC staffing:** Of 34 matched states/UTs with a calculable 2023 rural PHC staffing ratio, **10 were below** the source-reported doctor requirement. The median in-position-to-required ratio was **1.38**.
 4. **Bivariate workforce–IMR relationship:** Staffing coverage and 2023 infant mortality were negatively correlated across 34 states/UTs (Pearson r = **−0.538**; Spearman rho = **−0.562**).
 5. **Adjusted workforce–IMR association (32 states/UTs):** after controlling for per-capita NSDP and female literacy, higher rural PHC staffing remains associated with lower infant mortality in the main log-ratio model (**−7.62, 95% CI −14.7 to −0.6; p = 0.03**). Doubling the staffing ratio is associated with about **5.3 fewer infant deaths per 1,000 live births**. The result is sensitive to functional form and sample composition (linear ratio: −3.40, p = 0.21), so it is exploratory, not causal. [Full seven-specification robustness table](#4-adjusted-workforceimr-regression).
-6. **Government hospital beds:** Across 36 states/UTs, the median was **0.949 government beds per 1,000 projected population**. Bed counts and population refer to different dates, and the source table has a documented reconciliation issue.
+6. **Household financial-protection proxy:** NFHS-5 reports 41.0% of Indian households had at least one usual member covered by a health insurance/financing scheme. State/UT coverage ranges from **1.8% to 87.8%**; its Pearson correlation with nominal per-capita NSDP is **0.052** (p = 0.776; n = 33). This measures coverage reach, not adequacy of cover or actual out-of-pocket burden.\n7. **Government hospital beds:** Across 36 states/UTs, the median was **0.949 government beds per 1,000 projected population**. Bed counts and population refer to different dates, and the source table has a documented reconciliation issue.
 
 ## Research questions
 
@@ -23,7 +23,7 @@ This project examines India's health-financing mix, state public-health budgets,
 | How does rural PHC staffing compare with reported requirements? | RBI rural PHC doctors, 2023 | Descriptive |
 | Is staffing associated with infant mortality? | 2023 staffing and SRS IMR, 34 matched states/UTs | Bivariate association |
 | Does the association persist after socioeconomic controls? | 2021–22 per-capita NSDP and NFHS-5 female literacy, 32 complete cases | Exploratory adjusted association |
-| How does government bed availability vary by population? | NHP-2023 bed counts and projected population | Descriptive |
+| How does household insurance coverage vary across states/UTs? | NFHS-5, percentage of households with any usual member covered | Descriptive coverage proxy |\n| How does government bed availability vary by population? | NHP-2023 bed counts and projected population | Descriptive |
 | What is household catastrophic health expenditure by state? | Not measured in current data | Not answered |
 
 ## Data sources
@@ -35,7 +35,7 @@ This project examines India's health-financing mix, state public-health budgets,
 | State infant mortality rate | Calendar 2023 | [RBI Handbook 2024–25, Table 4 (SRS)](https://www.rbi.org.in/scripts/PublicationsView.aspx?id=23453) |
 | Rural PHC doctors in position and required | Calendar 2023 | [RBI Handbook 2024–25, Table 16](https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23465) |
 | Per-capita NSDP | FY2021–22, current prices | [RBI Handbook 2023–24, Table 26](https://nhm.tn.gov.in/wp-content/uploads/2026/Key_Statistics/RBI/RBI%20Statistics%20Handbook%202023-24.pdf) |
-| Female literacy, women aged 15–49 | NFHS-5, 2019–21 | [NFHS-5 India Report, Table 3.4.1](https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf) |
+| Female literacy, women aged 15–49 | NFHS-5, 2019–21 | [NFHS-5 India Report, Table 3.4.1](https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf) |\n| Household health insurance/financing coverage | NFHS-5, 2019–21 | [NFHS-5 India Report, Table 11.15 and Figure 11.2](https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf) |
 | Government hospital beds | 31 December 2022 | [CBHI National Health Profile 2023, Table 6.2.2](https://cbhidghs.mohfw.gov.in/sites/default/files/NHP/NHP-2023-Last-Final.pdf) |
 | Projected population | 1 March 2021 | CBHI National Health Profile 2023, Table 1.1.2(d) |
 
@@ -81,7 +81,7 @@ The preferred model uses the natural log of the staffing ratio, with controls fo
 
 The 50-doctor threshold is a sensitivity check, not a formal statistical cutoff. Leave-one-out rows show the endpoints of the full one-state-at-a-time analysis. Linear and log coefficients have different units.
 
-### 5. Government hospital beds per 1,000 population
+### 5. State-level household financial protection proxy and government hospital beds\n\n#### NFHS-5 household health insurance/financing coverage, 2019–21\n\n![NFHS-5 household health insurance coverage](Visualisations/12_nfhs5_household_health_insurance_coverage.svg)\n\nThe indicator is the percentage of households with at least one usual member covered by any health insurance or financing scheme. Across 36 states/UTs, coverage ranges from 1.8% in Andaman & Nicobar Islands to 87.8% in Rajasthan. Among 33 states/UTs with a separate FY2021–22 per-capita NSDP observation, Pearson r = **0.052** (p = **0.776**). This weak cross-sectional correlation is descriptive; the coverage measure does not establish that insurance is adequate or that households avoid high out-of-pocket costs. See [Notebook 09](Notebooks/09_State_Health_Insurance_Coverage.ipynb) and the [data dictionary](Dataset/HEALTH_INSURANCE_COVERAGE_DATA_DICTIONARY.md).\n\n#### Government hospital beds per 1,000 population
 
 ![Government hospital beds per 1,000 population](Visualisations/10_government_hospital_beds_per_1000.svg)
 
@@ -102,7 +102,7 @@ cd Notebooks
 jupyter lab
 ```
 
-Run notebooks **01–08 in numerical order**. Each notebook reads analysis-ready CSVs from `../Dataset/` and writes figures to `../Visualisations/`. GitHub Actions validates data and notebook syntax, executes the notebooks, and saves executed outputs on successful pushes to `main`.
+Run notebooks **01–09 in numerical order**. Each notebook reads analysis-ready CSVs from `../Dataset/` and writes figures to `../Visualisations/`. GitHub Actions validates data and notebook syntax, executes the notebooks, and saves executed outputs on successful pushes to `main`.
 
 ## Limitations
 
@@ -112,7 +112,7 @@ Run notebooks **01–08 in numerical order**. Each notebook reads analysis-ready
 - The adjusted model is a small cross-section (32 observations) with two socioeconomic controls. Female literacy (2019–21) and NSDP (2021–22) predate the 2023 outcome; maternal health, nutrition, sanitation, fertility, urbanisation, transport and health-system quality remain potential confounders.
 - The adjusted coefficient changes with functional form and sample composition. HC3 standard errors do not eliminate omitted-variable bias or establish causality.
 - The hospital-bed rate combines different reference dates, excludes private beds and does not measure occupancy, staffing, quality or geographic access. The NHP state-row reconciliation issue is documented in Notebook 08.
-- State-level household affordability and rural–urban utilisation remain unanswered. Household survey analysis is needed before drawing conclusions about those dimensions.
+- The NFHS-5 insurance indicator adds state-level coverage reach, but does not measure benefit adequacy, claims, out-of-pocket spending or catastrophic expenditure. Rural–urban utilisation and household-level financial burden remain unanswered.
 
 ## Further documentation
 
