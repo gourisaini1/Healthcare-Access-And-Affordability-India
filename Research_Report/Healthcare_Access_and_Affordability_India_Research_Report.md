@@ -28,7 +28,8 @@ The empirical questions addressed in this report are:
 3. How does rural PHC doctor staffing compare with the staffing requirement reported by RBI for 2023?
 4. Is rural PHC doctor staffing coverage associated with infant mortality in 2023?
 5. How does government hospital-bed availability vary after adjusting for projected population?
-6. Does the staffing–IMR association persist after controlling for per-capita state income and female literacy?\n7. How does household health insurance/financing coverage vary across states/UTs, and how is it associated with per-capita NSDP?
+6. Does the staffing–IMR association persist after controlling for per-capita state income and female literacy?
+7. How does household health insurance/financing coverage vary across states/UTs, and how is it associated with per-capita NSDP?
 
 The following questions are recognised as important but are **not answered by the current evidence**: the household incidence of catastrophic health expenditure; differences in rural and urban healthcare utilisation and affordability; and causal effects of staffing or the full set of socioeconomic determinants of health outcomes.
 
@@ -41,7 +42,8 @@ The following questions are recognised as important but are **not answered by th
 | Infant mortality rate | Calendar 2023 | SRS, reproduced in RBI Handbook 2024–25, Table 4 | State health outcome |
 | Rural PHC doctor staffing | Calendar 2023 | RBI Handbook 2024–25, Table 16 | Staffing relative to reported requirement |
 | Per-capita NSDP | FY2021–22, current prices | RBI Handbook 2023–24, Table 26 | Income control |
-| Female literacy | NFHS-5, 2019–21, women aged 15–49 | IIPS / MoHFW, NFHS-5 India Report, Table 3.4.1 | Education control |\n| Household health insurance/financing coverage | NFHS-5, 2019–21 | IIPS / ICF, NFHS-5 India Report, Table 11.15 and Figure 11.2 | State-level financial-protection proxy |
+| Female literacy | NFHS-5, 2019–21, women aged 15–49 | IIPS / MoHFW, NFHS-5 India Report, Table 3.4.1 | Education control |
+| Household health insurance/financing coverage | NFHS-5, 2019–21 | IIPS / ICF, NFHS-5 India Report, Table 11.15 and Figure 11.2 | State-level financial-protection proxy |
 | Government hospital beds | 31 December 2022 | CBHI, National Health Profile 2023, Table 6.2.2 | Beds numerator |
 | Projected population | 1 March 2021 | CBHI, National Health Profile 2023, Table 1.1.2(d) | Population denominator for beds per 1,000 |
 
@@ -86,7 +88,11 @@ The staffing ratio is joined to 2023 infant mortality by harmonised state/UT lab
 
 The dependent variable is 2023 IMR (deaths per 1,000 live births). The principal predictor in the preferred specification is the natural logarithm of the 2023 rural PHC in-position-to-required doctor ratio. The log specification was adopted after an initial linear-ratio analysis, following a robustness review; the linear result is reported alongside it for that reason. The raw ratio is right-skewed; the log transformation compresses its upper tail and models proportional rather than absolute differences. The original unlogged ratio is retained as a functional-form sensitivity specification. Controls are (i) the natural logarithm of per-capita NSDP at current prices in FY2021–22 (₹), from RBI Handbook 2023–24 Table 26, and (ii) NFHS-5 percentage literate among women aged 15–49 in 2019–21, from Table 3.4.1. Models are estimated by OLS with HC3 heteroskedasticity-consistent standard errors. Both full-sample adjusted specifications use the same complete-case sample of 32 observations. Two matched observations (Dadra & Nagar Haveli and Daman & Diu combined; Lakshadweep) have no separate 2021–22 NSDP value and are excluded rather than imputed. The notebook estimates both linear- and log-ratio models in the restricted sample with at least 50 required PHC doctors (n=27), performs leave-one-state/UT-out estimation of the main log model, and jointly excludes Goa and Delhi as an additional influence check. This is an exploratory cross-section; covariate years predate the outcome and the model does not establish causality.
 
-### 3.6 Household health insurance/financing coverage\n\nThe state-level coverage measure is the percentage of households with at least one usual member covered by any health insurance or financing scheme, from NFHS-5 Table 11.15 (2019–21). It is interpreted as scheme reach, not as the adequacy of cover, successful claim payment, utilisation or a reduction in out-of-pocket spending. The correlation with nominal per-capita NSDP at current prices in FY2021–22 is calculated on the 33 state/UTs with a separate NSDP observation; missing NSDP values are not imputed.\n\n### 3.7 Population-adjusted government hospital beds
+### 3.6 Household health insurance/financing coverage
+
+The state-level coverage measure is the percentage of households with at least one usual member covered by any health insurance or financing scheme, from NFHS-5 Table 11.15 (2019–21). It is interpreted as scheme reach, not as the adequacy of cover, successful claim payment, utilisation or a reduction in out-of-pocket spending. The correlation with nominal per-capita NSDP at current prices in FY2021–22 is calculated on the 33 state/UTs with a separate NSDP observation; missing NSDP values are not imputed.
+
+### 3.7 Population-adjusted government hospital beds
 
 Government hospital bed counts are taken from NHP-2023 Table 6.2.2, whose title dates the counts to 31 December 2022. The denominator is projected state/UT population as of 1 March 2021 from NHP-2023 Table 1.1.2(d), in thousands. Beds per 1,000 population are calculated as beds divided by population in thousands. The combined Dadra & Nagar Haveli and Daman & Diu population is the sum of the two separately projected populations. The 21-month reference-date gap is disclosed; the indicator is approximate.
 
@@ -159,7 +165,11 @@ Across 36 states/UTs, the median government hospital bed availability is 0.949 b
 
 The numerator is dated 31 December 2022; the population denominator is projected as of 1 March 2021, about 21 months earlier. The indicator covers government beds only and does not measure private beds, occupancy, staffing, quality or geographic accessibility. There is also a source-table reconciliation issue: the 36 state/UT rows sum to 880,307 beds, while the NHP India aggregate row reports 840,455, a difference of 39,852 equal to the Andhra Pradesh row. State-level rates use the published state rows; no national aggregate rate is calculated from these inconsistent totals.
 
-### 4.7 Household health insurance/financing coverage\n\nNFHS-5 reports that 41.0% of households nationally had at least one usual member covered by a health insurance or financing scheme. Across the 36 state/UT rows, coverage ranges from 1.8% in Andaman & Nicobar Islands to 87.8% in Rajasthan. For the 33 state/UTs with a separate FY2021–22 per-capita NSDP observation, Pearson correlation between nominal per-capita NSDP and household coverage is 0.052 (p=0.776). This is close to zero in this small, unweighted cross-section. It should not be interpreted as evidence that income is irrelevant to financial protection: the measure is an aggregate household coverage rate, the income series is nominal and not contemporaneous, and the analysis does not adjust for state policy, demographic or scheme design differences. Insurance coverage does not guarantee adequate benefits or eliminate out-of-pocket spending.\n\n## 5. Economic interpretation
+### 4.7 Household health insurance/financing coverage
+
+NFHS-5 reports that 41.0% of households nationally had at least one usual member covered by a health insurance or financing scheme. Across the 36 state/UT rows, coverage ranges from 1.8% in Andaman & Nicobar Islands to 87.8% in Rajasthan. For the 33 state/UTs with a separate FY2021–22 per-capita NSDP observation, Pearson correlation between nominal per-capita NSDP and household coverage is 0.052 (p=0.776). This is close to zero in this small, unweighted cross-section. It should not be interpreted as evidence that income is irrelevant to financial protection: the measure is an aggregate household coverage rate, the income series is nominal and not contemporaneous, and the analysis does not adjust for state policy, demographic or scheme design differences. Insurance coverage does not guarantee adequate benefits or eliminate out-of-pocket spending.
+
+## 5. Economic interpretation
 
 The national NHA series documents a shift in the financing mix, but the persistence of OOPE makes financial protection an important research priority. State budget shares provide information about fiscal priorities but not actual service delivery or household affordability.
 
@@ -179,7 +189,8 @@ A policy interpretation should therefore avoid single-indicator rankings. Better
 8. Two matched observations without a separate 2021–22 NSDP value are excluded from the adjusted model; no imputation is used.
 9. Hospital-bed rates combine a 2022-12-31 numerator with a 2021-03-01 projected population denominator.
 10. The NHP state-row bed sum does not reconcile with the published India aggregate; the discrepancy is disclosed.
-11. NFHS-5 household insurance coverage measures whether any usual member is covered, not benefit adequacy, claim payment, out-of-pocket expenditure or catastrophic spending.\n12. The project does not yet calculate household catastrophic expenditure or impoverishment measures.
+11. NFHS-5 household insurance coverage measures whether any usual member is covered, not benefit adequacy, claim payment, out-of-pocket expenditure or catastrophic spending.
+12. The project does not yet calculate household catastrophic expenditure or impoverishment measures.
 
 ## 7. Further research
 
@@ -187,4 +198,4 @@ The next empirical extension should add household-level medical expenditure data
 
 ## 8. Reproducibility
 
-The repository contains eight canonical Jupyter notebooks, source CSVs, data dictionaries, visualisations, a research report and a GitHub Actions workflow. The workflow validates source files, checks notebook syntax and executes all notebooks; executed notebooks and generated SVG visualisations are committed on pushes to main. Pull-request runs do not attempt to push. The output commit uses a CI-skip marker to prevent recursive workflow runs.
+The repository contains nine canonical Jupyter notebooks, source CSVs, data dictionaries, visualisations, a research report and a GitHub Actions workflow. The workflow validates source files, checks notebook syntax and executes all notebooks; executed notebooks and generated SVG visualisations are committed on pushes to main. Pull-request runs do not attempt to push. The output commit uses a CI-skip marker to prevent recursive workflow runs.
